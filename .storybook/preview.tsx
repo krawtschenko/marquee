@@ -10,7 +10,11 @@ const prefersLightTheme = () =>
   window.matchMedia?.('(prefers-color-scheme: light)').matches ?? false
 
 const preview: Preview = {
+  tags: ['autodocs'],
+
   parameters: {
+    layout: 'centered',
+
     docs: {
       theme: prefersLightTheme() ? themes.light : themes.dark,
     },

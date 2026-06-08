@@ -24,6 +24,7 @@ export default defineConfig([globalIgnores(['dist', 'storybook-static', 'node_mo
     'simple-import-sort': simpleImportSort,
   },
   rules: {
+    '@typescript-eslint/no-unused-vars': 'warn',
     'simple-import-sort/exports': 'error',
     'simple-import-sort/imports': 'error',
   },
