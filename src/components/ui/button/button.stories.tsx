@@ -52,14 +52,32 @@ export const Danger: Story = {
   },
 }
 
+export const WithoutIcon: Story = {
+  args: {
+    children: 'Click me',
+    variant: 'primary',
+    size: 'md',
+    disabled: false,
+  },
+}
+
 export const Loading: Story = {
   args: {
     children: 'Loading',
     variant: 'primary',
     size: 'md',
-    icon: Trash,
     loading: true,
     disabled: false,
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    children: 'Click me',
+    variant: 'primary',
+    size: 'md',
+    icon: Play,
+    disabled: true,
   },
 }
 

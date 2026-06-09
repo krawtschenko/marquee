@@ -27,14 +27,14 @@ export const Disabled: Story = {
 }
 
 export const Controlled: Story = {
-  render: args => {
+  render: (args) => {
     const [value, setValue] = useState('')
 
     return (
       <SearchInput
         {...args}
         value={value}
-        onChange={e => setValue(e.target.value)}
+        onChange={(e) => setValue(e.target.value)}
         onClear={() => setValue('')}
         placeholder="Search..."
       />

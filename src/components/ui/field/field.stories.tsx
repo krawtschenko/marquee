@@ -16,7 +16,18 @@ export const Default: Story = {
     label: 'Display name',
     req: false,
     placeholder: 'Enter name',
-    hint: 'Default',
+    hint: 'Hint text',
+    error: false,
+    disabled: false,
+  },
+}
+
+export const Required: Story = {
+  args: {
+    label: 'Display name',
+    req: true,
+    placeholder: 'Enter name',
+    hint: 'This field is required',
     error: false,
     disabled: false,
   },
@@ -27,8 +38,27 @@ export const Error: Story = {
     label: 'Display name',
     req: true,
     placeholder: 'Enter name',
-    hint: 'Error',
+    hint: 'This field is required',
     error: true,
+    disabled: false,
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    label: 'Display name',
+    req: false,
+    placeholder: 'Enter name',
+    hint: 'Hint text',
+    error: false,
+    disabled: true,
+  },
+}
+
+export const NoLabel: Story = {
+  args: {
+    placeholder: 'Enter name',
+    error: false,
     disabled: false,
   },
 }

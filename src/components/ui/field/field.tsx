@@ -1,12 +1,13 @@
+import { type ComponentPropsWithoutRef, useId } from 'react'
+
 import clsx from 'clsx'
 import { TriangleAlert } from 'lucide-react'
-import { type ComponentPropsWithoutRef, useId } from 'react'
 
 import s from './field.module.scss'
 
 type Props = {
   label?: string
-  req?: boolean
+  required?: boolean
   hint?: string
   error?: boolean
 } & ComponentPropsWithoutRef<'input'>
@@ -15,7 +16,7 @@ export const Field = ({
   id,
   className,
   label,
-  req,
+  required: req,
   hint,
   error,
   ...rest

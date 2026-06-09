@@ -38,3 +38,30 @@ export const Ghost: Story = {
     disabled: false,
   },
 }
+
+export const Small: Story = {
+  args: {
+    icon: Play,
+    variant: 'primary',
+    size: 'sm',
+    disabled: false,
+  },
+}
+
+export const Large: Story = {
+  args: {
+    icon: Play,
+    variant: 'primary',
+    size: 'lg',
+    disabled: false,
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    icon: Play,
+    variant: 'primary',
+    size: 'md',
+    disabled: true,
+  },
+}
