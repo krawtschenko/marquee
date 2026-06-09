@@ -1,4 +1,5 @@
 import '@/styles/index.scss'
+import '@/styles/fonts.ts'
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
