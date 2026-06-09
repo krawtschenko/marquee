@@ -4,7 +4,7 @@ import type { ComponentPropsWithoutRef, ElementType } from 'react'
 
 import s from './button.module.scss'
 
-export type Props<T extends ElementType = 'button'> = {
+type Props<T extends ElementType = 'button'> = {
   as?: T
   variant?: 'primary' | 'secondary' | 'ghost' | 'danger'
   size?: 'sm' | 'md' | 'lg'
