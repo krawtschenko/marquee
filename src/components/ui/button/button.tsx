@@ -25,10 +25,13 @@ export const Button = <T extends ElementType = 'button'>(props: Props<T>) => {
   } = props
 
   const LeadingIcon = loading ? LoaderCircle : Icon
+  const iconSize = size === 'md' ? 16 : size === 'sm' ? 14 : 18
 
   return (
     <Tag className={clsx(s.btn, s[variant], s[size], className)} {...rest}>
-      {LeadingIcon && <LeadingIcon size={16} />}
+      {LeadingIcon && (
+        <LeadingIcon size={iconSize} className={clsx(loading && s.loading)} />
+      )}
       {children}
     </Tag>
   )

@@ -1,8 +1,6 @@
-.btn {
-  --btn-h: 42px;
-  --btn-px: 20px;
-  --btn-fs: var(--text-base);
+@use '@/styles' as mixins;
 
+.btn {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -22,25 +20,85 @@
     var(--t-colors),
     transform var(--dur-fast) var(--ease-out);
 
+  &:focus-visible {
+    @include mixins.focus-ring;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.42;
+  }
+
   &.primary {
     box-shadow: var(--shadow-glow);
     background: var(--accent);
     color: var(--text-on-accent);
+
+    &:hover {
+      background: var(--accent-hover);
+    }
+
+    &:active {
+      background: var(--accent-active);
+    }
   }
 
   &.secondary {
     border-color: var(--border-strong);
     background: var(--surface-raised);
     color: var(--text);
+
+    &:hover {
+      border-color: var(--border-accent);
+      background: var(--surface-overlay);
+    }
+
+    &:active {
+      background: var(--surface);
+    }
   }
 
   &.ghost {
     background: transparent;
     color: var(--text-muted);
+
+    &:hover {
+      background: var(--surface-raised);
+      color: var(--text);
+    }
   }
 
   &.danger {
     background: var(--danger);
     color: #fff;
+
+    &:hover {
+      filter: brightness(1.08);
+    }
+  }
+
+  &.sm {
+    --btn-h: 34px;
+    --btn-px: 15px;
+    --btn-fs: var(--text-sm);
+  }
+
+  &.md {
+    --btn-h: 42px;
+    --btn-px: 20px;
+    --btn-fs: var(--text-base);
+  }
+
+  &.lg {
+    --btn-h: 52px;
+    --btn-px: 28px;
+    --btn-fs: var(--text-md);
+  }
+
+  svg {
+    &.loading {
+      animation: global(mq-spin) 0.7s linear infinite;
+    }
   }
 }
