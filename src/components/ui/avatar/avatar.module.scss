@@ -21,13 +21,13 @@
   &.xs {
     width: 26px;
     height: 26px;
-    font-size: 11px;
+    font-size: var(--text-2xs);
   }
 
   &.sm {
     width: 34px;
     height: 34px;
-    font-size: 13px;
+    font-size: var(--text-sm);
   }
 
   &.md {
@@ -39,7 +39,7 @@
   &.lg {
     width: 88px;
     height: 88px;
-    font-size: 30px;
+    font-size: var(--text-2xl);
   }
 }
 
