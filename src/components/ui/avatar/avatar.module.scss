@@ -1,0 +1,69 @@
+.root {
+  position: relative;
+  display: grid;
+  flex: none;
+  border-radius: 50%;
+  outline: none;
+  box-shadow: inset 0 0 0 1px var(--border);
+  background: var(--surface-overlay);
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  place-items: center;
+
+  &:focus-visible {
+    box-shadow:
+      inset 0 0 0 1px var(--border),
+      0 0 0 2px var(--bg),
+      0 0 0 3.5px var(--accent);
+  }
+
+  &.xs {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  &.sm {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+
+  &.md {
+    width: 64px;
+    height: 64px;
+    font-size: 22px;
+  }
+
+  &.lg {
+    width: 88px;
+    height: 88px;
+    font-size: 30px;
+  }
+}
+
+.image {
+  overflow: hidden;
+  border-radius: inherit;
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--accent-soft) 0 2px,
+    transparent 2px 11px
+  );
+}
+
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+  background: var(--surface-overlay);
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  user-select: none;
+}
