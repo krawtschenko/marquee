@@ -30,6 +30,13 @@
         transform: scaleX(0);
       }
 
+      &:focus-visible {
+        outline: none;
+        box-shadow:
+          0 0 0 2px var(--bg),
+          0 0 0 4px var(--focus-ring);
+      }
+
       &:hover {
         color: var(--text);
       }
@@ -71,6 +78,13 @@
           box-shadow: var(--shadow-xs);
           background: var(--surface-overlay);
           color: var(--text);
+        }
+
+        &:focus-visible {
+          outline: none;
+          box-shadow:
+            0 0 0 2px var(--surface-sunken),
+            0 0 0 4px var(--focus-ring);
         }
 
         &[data-disabled] {
