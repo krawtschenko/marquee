@@ -1,0 +1,36 @@
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-weight: var(--fw-medium);
+
+  &.pill {
+    padding: 5px 10px;
+    border-radius: var(--radius-full);
+    box-shadow: inset 0 0 0 1px var(--border);
+    background: rgb(8 8 10 / 72%);
+    backdrop-filter: blur(8px);
+  }
+
+  .star {
+    display: inline-flex;
+    color: var(--accent);
+
+    svg {
+      width: 15px;
+      height: 15px;
+      fill: currentcolor;
+    }
+  }
+
+  .score {
+    color: var(--text);
+    font-size: var(--text-sm);
+  }
+
+  .max {
+    color: var(--text-subtle);
+    font-size: var(--text-xs);
+  }
+}

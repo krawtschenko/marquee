@@ -1,0 +1,63 @@
+.ring {
+  --pct: 0;
+  --ring: var(--success);
+
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--ring) calc(var(--pct) * 1%),
+    var(--border) 0
+  );
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    background: var(--surface);
+  }
+
+  &.high {
+    --ring: var(--success);
+  }
+
+  &.mid {
+    --ring: var(--warning);
+  }
+
+  &.low {
+    --ring: var(--danger);
+  }
+
+  &.sm {
+    width: 48px;
+    height: 48px;
+
+    .value {
+      font-size: var(--text-sm);
+    }
+  }
+
+  &.lg {
+    width: 64px;
+    height: 64px;
+
+    .value {
+      font-size: var(--text-md);
+    }
+  }
+
+  .value {
+    position: relative;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-weight: var(--fw-semibold);
+
+    sup {
+      color: var(--text-subtle);
+      font-size: 8px;
+    }
+  }
+}
