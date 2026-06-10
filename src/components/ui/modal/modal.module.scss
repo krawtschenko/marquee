@@ -1,0 +1,26 @@
+.overlay {
+  position: fixed;
+  background: var(--overlay-scrim);
+  animation: global(mq-fade) var(--dur-base) var(--ease-out);
+  inset: 0;
+  backdrop-filter: blur(6px);
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(460px, calc(100% - 48px));
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  background: var(--surface);
+  transform: translate(-50%, -50%);
+  animation: global(mq-pop) var(--dur-slow) var(--ease-out);
+
+  &:focus {
+    outline: none;
+  }
+}
