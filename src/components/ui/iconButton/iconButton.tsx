@@ -4,11 +4,11 @@ import type { ComponentPropsWithoutRef } from 'react'
 
 import s from './iconButton.module.scss'
 
-type Props = {
+type Props = ComponentPropsWithoutRef<'button'> & {
   icon: LucideIcon
   variant?: 'primary' | 'solid' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
-} & ComponentPropsWithoutRef<'button'>
+}
 
 export const IconButton = ({
   icon: Icon,

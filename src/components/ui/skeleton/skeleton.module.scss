@@ -1,0 +1,40 @@
+.skel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--skeleton-base);
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--skeleton-shine),
+      transparent
+    );
+    transform: translateX(-100%);
+    animation: global(mq-shimmer) 1.4s ease-in-out infinite;
+    inset: 0;
+  }
+
+  &.line {
+    height: 12px;
+    border-radius: var(--radius-full);
+  }
+
+  &.circle {
+    border-radius: 50%;
+  }
+
+  &.poster {
+    aspect-ratio: 2 / 3;
+    border-radius: var(--radius-md);
+  }
+}
+
+.textBlock {
+  > * + * {
+    margin-top: 10px;
+  }
+}

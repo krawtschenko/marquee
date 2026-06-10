@@ -33,9 +33,9 @@ export const Dropdown = ({ children, trigger, label, ...rest }: Props) => {
   )
 }
 
-type DropdownItemProps = { danger?: boolean } & ComponentPropsWithoutRef<
-  typeof DropdownMenuPrimitive.Item
->
+type DropdownItemProps = ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
+  danger?: boolean
+}
 
 export const DropdownItem = ({
   className,

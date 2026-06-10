@@ -5,10 +5,10 @@ import type { ComponentPropsWithoutRef } from 'react'
 
 import s from './select.module.scss'
 
-type Props = {
+type Props = ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
   placeholder?: string
   label?: string
-} & ComponentPropsWithoutRef<typeof SelectPrimitive.Root>
+}
 
 export const Select = ({ children, placeholder, label, ...rest }: Props) => {
   return (

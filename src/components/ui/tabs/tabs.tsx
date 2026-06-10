@@ -9,9 +9,9 @@ type Variant = 'underline' | 'pill'
 
 const VariantContext = createContext<Variant>('underline')
 
-type TabsProps = {
+type TabsProps = ComponentPropsWithoutRef<typeof TabsPrimitive.Root> & {
   variant?: Variant
-} & ComponentPropsWithoutRef<typeof TabsPrimitive.Root>
+}
 
 export const Tabs = ({
   className,

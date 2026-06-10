@@ -5,12 +5,12 @@ import { TriangleAlert } from 'lucide-react'
 
 import s from './field.module.scss'
 
-type Props = {
+type Props = ComponentPropsWithoutRef<'input'> & {
   label?: string
   required?: boolean
   hint?: string
   error?: boolean
-} & ComponentPropsWithoutRef<'input'>
+}
 
 export const Field = ({
   id,
