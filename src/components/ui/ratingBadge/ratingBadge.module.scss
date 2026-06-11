@@ -9,7 +9,7 @@
     padding: 5px 10px;
     border-radius: var(--radius-full);
     box-shadow: inset 0 0 0 1px var(--border);
-    background: rgb(8 8 10 / 72%);
+    background: var(--overlay-scrim);
     backdrop-filter: blur(8px);
   }
 
