@@ -14,7 +14,7 @@ type Story = StoryObj<typeof Field>
 export const Default: Story = {
   args: {
     label: 'Display name',
-    req: false,
+    required: false,
     placeholder: 'Enter name',
     hint: 'Hint text',
     error: false,
@@ -25,7 +25,7 @@ export const Default: Story = {
 export const Required: Story = {
   args: {
     label: 'Display name',
-    req: true,
+    required: true,
     placeholder: 'Enter name',
     hint: 'This field is required',
     error: false,
@@ -36,7 +36,7 @@ export const Required: Story = {
 export const Error: Story = {
   args: {
     label: 'Display name',
-    req: true,
+    required: true,
     placeholder: 'Enter name',
     hint: 'This field is required',
     error: true,
@@ -47,7 +47,7 @@ export const Error: Story = {
 export const Disabled: Story = {
   args: {
     label: 'Display name',
-    req: false,
+    required: false,
     placeholder: 'Enter name',
     hint: 'Hint text',
     error: false,
