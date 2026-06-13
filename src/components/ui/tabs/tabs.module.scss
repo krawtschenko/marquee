@@ -54,44 +54,5 @@
         opacity: 0.4;
       }
     }
-
-    &.pill {
-      display: inline-flex;
-      padding: 4px;
-      border-bottom: none;
-      border-radius: var(--radius-full);
-      background: var(--surface-sunken);
-
-      .pillTrigger {
-        padding: 8px 16px;
-        border-radius: var(--radius-full);
-        transition:
-          color var(--dur-fast) var(--ease-out),
-          background var(--dur-fast) var(--ease-out),
-          box-shadow var(--dur-fast) var(--ease-out);
-
-        &::after {
-          display: none;
-        }
-
-        &[data-state='active'] {
-          box-shadow: var(--shadow-xs);
-          background: var(--surface-overlay);
-          color: var(--text);
-        }
-
-        &:focus-visible {
-          outline: none;
-          box-shadow:
-            0 0 0 2px var(--surface-sunken),
-            0 0 0 4px var(--focus-ring);
-        }
-
-        &[data-disabled] {
-          pointer-events: none;
-          opacity: 0.4;
-        }
-      }
-    }
   }
 }

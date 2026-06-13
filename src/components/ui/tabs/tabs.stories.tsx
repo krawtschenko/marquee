@@ -21,16 +21,6 @@ export const Default: Story = {
   ),
 }
 
-export const Pill: Story = {
-  render: () => (
-    <Tabs defaultValue="tab1" variant="pill">
-      <TabsTrigger value="tab1">Account</TabsTrigger>
-      <TabsTrigger value="tab2">Password</TabsTrigger>
-      <TabsTrigger value="tab3">Settings</TabsTrigger>
-    </Tabs>
-  ),
-}
-
 export const WithDisabled: Story = {
   render: () => (
     <Tabs defaultValue="tab1">
