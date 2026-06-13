@@ -14,22 +14,8 @@ export default meta
 type Story = StoryObj<typeof SearchInput>
 
 export const Default: Story = {
-  args: {
-    placeholder: 'Search...',
-  },
-}
-
-export const Disabled: Story = {
-  args: {
-    placeholder: 'Search...',
-    disabled: true,
-  },
-}
-
-export const Controlled: Story = {
   render: (args) => {
     const [value, setValue] = useState('')
-
     return (
       <SearchInput
         {...args}
@@ -39,5 +25,12 @@ export const Controlled: Story = {
         placeholder="Search..."
       />
     )
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    placeholder: 'Search...',
+    disabled: true,
   },
 }

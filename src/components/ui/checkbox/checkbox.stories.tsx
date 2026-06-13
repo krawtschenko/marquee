@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Checkbox } from './checkbox'
@@ -11,45 +13,43 @@ export default meta
 
 type Story = StoryObj<typeof Checkbox>
 
-export const Default: Story = {}
+const ControlledCheckbox = (props: React.ComponentProps<typeof Checkbox>) => {
+  const [checked, setChecked] = useState<boolean | 'indeterminate'>(props.checked ?? false)
+  return <Checkbox {...props} checked={checked} onCheckedChange={setChecked} />
+}
+
+export const Default: Story = {
+  render: (args) => <ControlledCheckbox {...args} />,
+}
 
 export const Checked: Story = {
-  args: {
-    defaultChecked: true,
-  },
+  render: (args) => <ControlledCheckbox {...args} checked={true} />,
 }
 
 export const WithLabel: Story = {
-  args: {
-    label: 'Accept terms and conditions',
-  },
+  render: (args) => (
+    <ControlledCheckbox {...args} label="Accept terms and conditions" />
+  ),
 }
 
 export const WithLabelChecked: Story = {
-  args: {
-    label: 'Accept terms and conditions',
-    defaultChecked: true,
-  },
+  render: (args) => (
+    <ControlledCheckbox {...args} checked={true} label="Accept terms and conditions" />
+  ),
 }
 
 export const Disabled: Story = {
-  args: {
-    disabled: true,
-    label: 'Unavailable option',
-  },
+  render: (args) => (
+    <ControlledCheckbox {...args} disabled label="Unavailable option" />
+  ),
 }
 
 export const DisabledChecked: Story = {
-  args: {
-    disabled: true,
-    defaultChecked: true,
-    label: 'Unavailable option',
-  },
+  render: (args) => (
+    <ControlledCheckbox {...args} checked={true} disabled label="Unavailable option" />
+  ),
 }
 
 export const Error: Story = {
-  args: {
-    error: true,
-    label: 'Required field',
-  },
+  render: (args) => <ControlledCheckbox {...args} error label="Required field" />,
 }

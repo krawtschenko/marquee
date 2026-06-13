@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Switch } from './switch'
@@ -11,42 +13,37 @@ export default meta
 
 type Story = StoryObj<typeof Switch>
 
-export const Default: Story = {}
+const ControlledSwitch = (props: React.ComponentProps<typeof Switch>) => {
+  const [checked, setChecked] = useState(props.checked ?? false)
+  return <Switch {...props} checked={checked} onCheckedChange={setChecked} />
+}
+
+export const Default: Story = {
+  render: (args) => <ControlledSwitch {...args} />,
+}
 
 export const Checked: Story = {
-  args: {
-    defaultChecked: true,
-  },
+  render: (args) => <ControlledSwitch {...args} checked={true} />,
 }
 
 export const WithLabel: Story = {
-  args: {
-    label: 'Enable notifications',
-  },
+  render: (args) => <ControlledSwitch {...args} label="Enable notifications" />,
 }
 
 export const WithLabelChecked: Story = {
-  args: {
-    label: 'Enable notifications',
-    defaultChecked: true,
-  },
+  render: (args) => (
+    <ControlledSwitch {...args} checked={true} label="Enable notifications" />
+  ),
 }
 
 export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
+  render: (args) => <ControlledSwitch {...args} disabled />,
 }
 
 export const DisabledChecked: Story = {
-  args: {
-    disabled: true,
-    defaultChecked: true,
-  },
+  render: (args) => <ControlledSwitch {...args} checked={true} disabled />,
 }
 
 export const Loading: Story = {
-  args: {
-    loading: true,
-  },
+  render: (args) => <ControlledSwitch {...args} loading />,
 }

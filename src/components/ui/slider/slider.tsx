@@ -25,6 +25,7 @@ export const Slider = ({
         min={min}
         max={max}
         value={value}
+        defaultValue={defaultValue}
         {...rest}
       >
         <SliderPrimitive.Track className={s.track}>
