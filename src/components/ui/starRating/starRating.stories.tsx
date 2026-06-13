@@ -13,26 +13,25 @@ export default meta
 
 type Story = StoryObj<typeof StarRating>
 
-export const Default: Story = {}
+const Interactive = (args: React.ComponentProps<typeof StarRating>) => {
+  const [value, setValue] = useState(args.value)
+  return <StarRating {...args} value={value} onChange={setValue} />
+}
+
+export const Default: Story = {
+  render: (args) => <Interactive {...args} value={0} />,
+}
 
 export const WithValue: Story = {
-  args: {
-    defaultValue: 6,
-  },
+  render: (args) => <Interactive {...args} value={6} />,
 }
 
 export const HalfStar: Story = {
-  args: {
-    defaultValue: 7,
-    showLabel: true,
-  },
+  render: (args) => <Interactive {...args} value={7} showLabel />,
 }
 
 export const WithLabel: Story = {
-  args: {
-    defaultValue: 8,
-    showLabel: true,
-  },
+  render: (args) => <Interactive {...args} value={8} showLabel />,
 }
 
 export const ReadOnly: Story = {
@@ -47,13 +46,5 @@ export const ReadOnlyWithLabel: Story = {
     value: 7,
     readonly: true,
     showLabel: true,
-  },
-}
-
-export const Controlled: Story = {
-  render: (args) => {
-    const [value, setValue] = useState(0)
-
-    return <StarRating {...args} value={value} onChange={setValue} showLabel />
   },
 }

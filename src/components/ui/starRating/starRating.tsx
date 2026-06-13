@@ -14,38 +14,27 @@ const getStarState = (star: number, val: number): StarState => {
 }
 
 type Props = {
-  value?: number
-  defaultValue?: number
+  value: number
+  onChange?: (value: number) => void
   showLabel?: boolean
   readonly?: boolean
-  onChange?: (value: number) => void
   className?: string
 }
 
-export const StarRating = ({
-  value: valueProp,
-  defaultValue = 0,
-  showLabel,
-  readonly,
-  onChange,
-  className,
-}: Props) => {
-  const [internalValue, setInternalValue] = useState(defaultValue)
+export const StarRating = ({ value, onChange, showLabel, readonly, className }: Props) => {
   const [hovered, setHovered] = useState<number | null>(null)
 
-  const value = valueProp ?? internalValue
-  const displayed = hovered !== null ? hovered * 2 : value
-
+  const displayed = hovered ?? value
   const interactive = !readonly
 
-  const set = (next: number) => {
-    if (valueProp === undefined) setInternalValue(next)
-    onChange?.(next)
+  const getHalfValue = (e: React.MouseEvent<HTMLSpanElement>, star: number) => {
+    const { left, width } = e.currentTarget.getBoundingClientRect()
+    return e.clientX - left < width / 2 ? star * 2 - 1 : star * 2
   }
 
-  const handleClick = (star: number) => {
-    const next = star * 2
-    set(next === value ? 0 : next)
+  const handleClick = (e: React.MouseEvent<HTMLSpanElement>, star: number) => {
+    const next = getHalfValue(e, star)
+    onChange?.(next === value ? 0 : next)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -54,7 +43,7 @@ export const StarRating = ({
     if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') next = Math.max(value - 1, 0)
     if (next !== null) {
       e.preventDefault()
-      set(next)
+      onChange?.(next)
     }
   }
 
@@ -78,8 +67,8 @@ export const StarRating = ({
               aria-hidden
               className={s.star}
               data-state={state}
-              onClick={interactive ? () => handleClick(star) : undefined}
-              onMouseEnter={interactive ? () => setHovered(star) : undefined}
+              onClick={interactive ? (e) => handleClick(e, star) : undefined}
+              onMouseMove={interactive ? (e) => setHovered(getHalfValue(e, star)) : undefined}
             >
               <Star size={26} />
               {state !== 'empty' && <Star size={26} />}
