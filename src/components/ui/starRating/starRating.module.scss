@@ -1,0 +1,68 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 46px;
+}
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: var(--radius-xs);
+  outline: none;
+
+  &:focus-visible {
+    box-shadow:
+      0 0 0 2px var(--bg),
+      0 0 0 4px var(--focus-ring);
+  }
+
+  &.passive .star {
+    cursor: default;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+.star {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-spring);
+
+  &:hover {
+    transform: scale(1.12);
+  }
+
+  > svg {
+    fill: currentcolor;
+    flex-shrink: 0;
+
+    &:first-child {
+      color: var(--surface-overlay);
+    }
+
+    &:last-child:not(:first-child) {
+      position: absolute;
+      color: var(--accent);
+    }
+  }
+
+  &[data-state='half'] > svg:last-child {
+    clip-path: inset(0 50% 0 0);
+  }
+}
+
+.label {
+  min-width: 48px;
+  color: var(--text-subtle);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+}
