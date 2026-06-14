@@ -1,6 +1,7 @@
 import { useTheme } from 'next-themes'
 import { Outlet } from 'react-router-dom'
 
+import { Container } from '@/components/layout'
 import { Header } from '@/components/layout/header'
 
 export function RootLayout() {
@@ -10,7 +11,9 @@ export function RootLayout() {
     <>
       <Header theme={theme} setTheme={setTheme} />
       <main>
-        <Outlet />
+        <Container>
+          <Outlet />
+        </Container>
       </main>
     </>
   )

@@ -2,9 +2,10 @@ import { type ComponentPropsWithoutRef } from 'react'
 
 import clsx from 'clsx'
 import { Moon, Sun } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import { Avatar, IconButton, Logo, SearchInput } from '@/components/ui'
+import { paths } from '@/router'
 
 import s from './header.module.scss'
 
@@ -12,6 +13,12 @@ type Props = ComponentPropsWithoutRef<'header'> & {
   theme?: string
   setTheme: (theme: string) => void
 }
+
+const navItems = [
+  { to: paths.home, label: 'Discover' },
+  { to: 'test', label: 'Test1' },
+  { to: 'test2', label: 'Test2' },
+]
 
 export const Header = ({ className, theme, setTheme, ...rest }: Props) => {
   return (
@@ -22,10 +29,11 @@ export const Header = ({ className, theme, setTheme, ...rest }: Props) => {
       </Link>
 
       <nav className={s.nav}>
-        <Link to={'#'}>Discover</Link>
-        <Link to={'#'}>Movies</Link>
-        <Link to={'#'}>TV</Link>
-        <Link to={'#'}>Watchlist</Link>
+        {navItems.map(({ to, label }) => (
+          <NavLink key={to} to={to}>
+            {label}
+          </NavLink>
+        ))}
       </nav>
 
       <div className={s.spacer}></div>

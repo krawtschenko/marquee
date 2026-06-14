@@ -5,13 +5,21 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import { ThemeProvider } from 'next-themes'
+import { Provider } from 'react-redux'
 
 import App from './App.tsx'
+import { store } from './store'
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')
+
+if (!root) throw new Error('Root element not found')
+
+createRoot(root).render(
   <StrictMode>
-    <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false}>
-      <App />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider defaultTheme="dark" enableSystem={false}>
+        <App />
+      </ThemeProvider>
+    </Provider>
   </StrictMode>,
 )
