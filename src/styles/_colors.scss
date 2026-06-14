@@ -107,16 +107,6 @@
   @include dark-theme;
 }
 
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
-    @include light-theme;
-  }
-}
-
 [data-theme='light'] {
   @include light-theme;
-}
-
-[data-theme='dark'] {
-  @include dark-theme;
 }

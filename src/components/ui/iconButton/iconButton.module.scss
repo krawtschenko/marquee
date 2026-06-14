@@ -4,12 +4,12 @@
   border-style: solid;
   border-color: transparent;
   border-radius: var(--radius-full);
+  color: var(--text-muted);
   cursor: pointer;
   transition:
     var(--t-colors),
     transform var(--dur-fast) var(--ease-out);
   place-items: center;
-  border-image: initial;
 
   &:active {
     transform: scale(0.93);

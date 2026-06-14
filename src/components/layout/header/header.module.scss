@@ -13,6 +13,10 @@
     align-items: center;
     gap: 11px;
 
+    &:hover .logo {
+      animation: global(mq-spin) 2s var(--ease-out) 1;
+    }
+
     .word {
       color: var(--text);
       font-family: var(--font-display);
@@ -39,11 +43,12 @@
       &[aria-current='page'] {
         color: var(--accent-fg);
       }
-    }
-  }
 
-  .search {
-    width: 400px;
+      &:hover {
+        background: var(--surface-raised);
+        color: var(--text);
+      }
+    }
   }
 
   .spacer {
@@ -54,5 +59,9 @@
     display: flex;
     align-items: center;
     gap: 10px;
+
+    .search {
+      width: 300px;
+    }
   }
 }
