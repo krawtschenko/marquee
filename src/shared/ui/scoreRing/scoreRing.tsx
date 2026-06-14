@@ -31,7 +31,8 @@ export const ScoreRing = ({
       {...rest}
     >
       <span className={s.value}>
-        {pct}<sup>%</sup>
+        {pct}
+        <sup>%</sup>
       </span>
     </div>
   )

@@ -21,7 +21,13 @@ type Props = {
   className?: string
 }
 
-export const StarRating = ({ value, onChange, showLabel, readonly, className }: Props) => {
+export const StarRating = ({
+  value,
+  onChange,
+  showLabel,
+  readonly,
+  className,
+}: Props) => {
   const [hovered, setHovered] = useState<number | null>(null)
 
   const displayed = hovered ?? value
@@ -39,8 +45,10 @@ export const StarRating = ({ value, onChange, showLabel, readonly, className }: 
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     let next: number | null = null
-    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') next = Math.min(value + 1, 10)
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') next = Math.max(value - 1, 0)
+    if (e.key === 'ArrowRight' || e.key === 'ArrowUp')
+      next = Math.min(value + 1, 10)
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown')
+      next = Math.max(value - 1, 0)
     if (next !== null) {
       e.preventDefault()
       onChange?.(next)
@@ -68,7 +76,11 @@ export const StarRating = ({ value, onChange, showLabel, readonly, className }: 
               className={s.star}
               data-state={state}
               onClick={interactive ? (e) => handleClick(e, star) : undefined}
-              onMouseMove={interactive ? (e) => setHovered(getHalfValue(e, star)) : undefined}
+              onMouseMove={
+                interactive
+                  ? (e) => setHovered(getHalfValue(e, star))
+                  : undefined
+              }
             >
               <Star size={26} />
               {state !== 'empty' && <Star size={26} />}

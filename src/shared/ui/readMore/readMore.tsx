@@ -1,4 +1,9 @@
-import { type ComponentPropsWithoutRef, useEffect, useRef, useState } from 'react'
+import {
+  type ComponentPropsWithoutRef,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 
 import clsx from 'clsx'
 import { ChevronDown } from 'lucide-react'
@@ -17,7 +22,7 @@ export const ReadMore = ({ text, className, ...rest }: Props) => {
 
   const toggle = () => {
     clampedRef.current = !clampedRef.current
-    setClamped(prev => !prev)
+    setClamped((prev) => !prev)
   }
 
   useEffect(() => {

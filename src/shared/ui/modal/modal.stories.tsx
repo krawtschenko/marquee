@@ -24,8 +24,16 @@ export const Confirm: Story = {
   render: () => (
     <Modal trigger={<Button variant="danger">Delete item</Button>}>
       <div style={{ padding: '24px 24px 20px' }}>
-        <p style={{ marginBottom: 20, color: 'var(--text-muted)', fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}>
-          Are you sure you want to delete this item? This action cannot be undone.
+        <p
+          style={{
+            marginBottom: 20,
+            color: 'var(--text-muted)',
+            fontSize: 'var(--text-base)',
+            lineHeight: 'var(--lh-relaxed)',
+          }}
+        >
+          Are you sure you want to delete this item? This action cannot be
+          undone.
         </p>
         <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
           <ModalClose>

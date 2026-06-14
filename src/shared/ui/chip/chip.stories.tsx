@@ -15,7 +15,7 @@ export const Single: Story = {
   args: {
     type: 'single',
   },
-  render: args => (
+  render: (args) => (
     <Chip {...args}>
       <ChipItem value="all">All</ChipItem>
       <ChipItem value="design">Design</ChipItem>
@@ -29,7 +29,7 @@ export const Multiple: Story = {
   args: {
     type: 'multiple',
   },
-  render: args => (
+  render: (args) => (
     <Chip {...args}>
       <ChipItem value="react">React</ChipItem>
       <ChipItem value="typescript">TypeScript</ChipItem>
@@ -43,7 +43,7 @@ export const WithDisabled: Story = {
   args: {
     type: 'multiple',
   },
-  render: args => (
+  render: (args) => (
     <Chip {...args}>
       <ChipItem value="active">Active</ChipItem>
       <ChipItem value="disabled" disabled>

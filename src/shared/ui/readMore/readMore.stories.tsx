@@ -20,12 +20,24 @@ export const Truncated: Story = {
   args: {
     text: longText,
   },
-  decorators: [Story => <div style={{ width: 480 }}><Story /></div>],
+  decorators: [
+    (Story) => (
+      <div style={{ width: 480 }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export const NoOverflow: Story = {
   args: {
     text: shortText,
   },
-  decorators: [Story => <div style={{ width: 480 }}><Story /></div>],
+  decorators: [
+    (Story) => (
+      <div style={{ width: 480 }}>
+        <Story />
+      </div>
+    ),
+  ],
 }

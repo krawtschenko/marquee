@@ -14,7 +14,11 @@ type Props = {
 const range = (from: number, to: number) =>
   Array.from({ length: to - from + 1 }, (_, i) => from + i)
 
-const buildPages = (page: number, total: number, siblings: number): (number | '…')[] => {
+const buildPages = (
+  page: number,
+  total: number,
+  siblings: number,
+): (number | '…')[] => {
   const left = Math.max(2, page - siblings)
   const right = Math.min(total - 1, page + siblings)
 
@@ -28,7 +32,13 @@ const buildPages = (page: number, total: number, siblings: number): (number | '�
   return pages
 }
 
-export const Pagination = ({ page, total, siblings = 1, onChange, className }: Props) => {
+export const Pagination = ({
+  page,
+  total,
+  siblings = 1,
+  onChange,
+  className,
+}: Props) => {
   const pages = buildPages(page, total, siblings)
 
   return (

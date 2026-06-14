@@ -8,14 +8,31 @@ type Props = ComponentPropsWithoutRef<'div'> & {
   label?: string
 }
 
-export const Divider = ({ className, orientation = 'horizontal', label, ...rest }: Props) => {
+export const Divider = ({
+  className,
+  orientation = 'horizontal',
+  label,
+  ...rest
+}: Props) => {
   if (orientation === 'vertical') {
-    return <div className={clsx(s.vert, className)} role="separator" aria-orientation="vertical" {...rest} />
+    return (
+      <div
+        className={clsx(s.vert, className)}
+        role="separator"
+        aria-orientation="vertical"
+        {...rest}
+      />
+    )
   }
 
   if (label) {
     return (
-      <div className={clsx(s.label, className)} role="separator" aria-orientation="horizontal" {...rest}>
+      <div
+        className={clsx(s.label, className)}
+        role="separator"
+        aria-orientation="horizontal"
+        {...rest}
+      >
         {label}
       </div>
     )

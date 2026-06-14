@@ -17,7 +17,7 @@ if (!root) throw new Error('Root element not found')
 createRoot(root).render(
   <StrictMode>
     <Provider store={store}>
-      <ThemeProvider defaultTheme="dark" enableSystem={false}>
+      <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false}>
         <App />
       </ThemeProvider>
     </Provider>

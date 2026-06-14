@@ -9,16 +9,17 @@ type SkeletonProps = ComponentPropsWithoutRef<'div'> & {
 
 export const Skeleton = ({ className, variant, ...rest }: SkeletonProps) => {
   return (
-    <div
-      className={clsx(s.skel, variant && s[variant], className)}
-      {...rest}
-    />
+    <div className={clsx(s.skel, variant && s[variant], className)} {...rest} />
   )
 }
 
 type SkeletonTextBlockProps = ComponentPropsWithoutRef<'div'>
 
-export const SkeletonTextBlock = ({ className, children, ...rest }: SkeletonTextBlockProps) => {
+export const SkeletonTextBlock = ({
+  className,
+  children,
+  ...rest
+}: SkeletonTextBlockProps) => {
   return (
     <div className={clsx(s.textBlock, className)} {...rest}>
       {children}
