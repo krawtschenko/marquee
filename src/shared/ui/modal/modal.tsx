@@ -1,5 +1,4 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import clsx from 'clsx'
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 
 import s from './modal.module.scss'

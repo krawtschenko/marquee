@@ -1,7 +1,6 @@
 import { type ComponentPropsWithoutRef } from 'react'
 
 import * as SliderPrimitive from '@radix-ui/react-slider'
-import clsx from 'clsx'
 
 import s from './slider.module.scss'
 
