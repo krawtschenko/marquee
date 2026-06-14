@@ -1,5 +1,5 @@
-import '@/styles/index.scss'
-import '@/styles/fonts.ts'
+import '@/app/styles/index.scss'
+import '@/app/styles/fonts.ts'
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
@@ -7,8 +7,8 @@ import { createRoot } from 'react-dom/client'
 import { ThemeProvider } from 'next-themes'
 import { Provider } from 'react-redux'
 
-import App from './App.tsx'
-import { store } from './store'
+import App from './app/App.tsx'
+import { store } from './app/store'
 
 const root = document.getElementById('root')
 

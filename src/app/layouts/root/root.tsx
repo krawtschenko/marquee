@@ -1,8 +1,8 @@
 import { useTheme } from 'next-themes'
 import { Outlet } from 'react-router-dom'
 
-import { Container } from '@/components/layout'
-import { Header } from '@/components/layout/header'
+import { Container } from '@/shared/ui'
+import { Header } from '@/widgets/header'
 
 export function RootLayout() {
   const { theme, setTheme } = useTheme()

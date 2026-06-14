@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { baseApi } from '@/api/base.api'
+import { baseApi } from '@/shared/api/base.api'
 
 export const store = configureStore({
   reducer: {
