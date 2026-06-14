@@ -1,1 +1,1 @@
-export { Select, SelectGroup, SelectGroupLabel, SelectItem, SelectSeparator } from './select'
+export { Select, SelectItem } from './select'

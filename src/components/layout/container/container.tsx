@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 import s from './container.module.scss'
 
-type ContainerProps<T extends ElementType = 'div'> = {
+type Props<T extends ElementType = 'div'> = {
   as?: T
   className?: string
 } & Omit<ComponentPropsWithoutRef<T>, 'as' | 'className'>
@@ -13,7 +13,7 @@ export const Container = <T extends ElementType = 'div'>({
   as,
   className,
   ...rest
-}: ContainerProps<T>) => {
+}: Props<T>) => {
   const Tag = as ?? 'div'
 
   return <Tag className={clsx(s.container, className)} {...rest} />
