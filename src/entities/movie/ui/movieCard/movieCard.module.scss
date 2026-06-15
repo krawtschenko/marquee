@@ -1,0 +1,107 @@
+.card {
+  position: relative;
+  width: 200px;
+  cursor: pointer;
+  transition: transform var(--dur-base) var(--ease-out);
+
+  &:hover {
+    transform: translateY(-4px);
+
+    .poster {
+      .scrim,
+      .favorite,
+      .play {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+
+  .poster {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    aspect-ratio: 2/3;
+
+    .fill {
+      position: absolute;
+      display: flex;
+      align-items: flex-end;
+      background-color: var(--surface-raised);
+      background-image: repeating-linear-gradient(
+        135deg,
+        var(--accent-soft) 0 2px,
+        transparent 2px 12px
+      );
+      inset: 0;
+    }
+
+    .rank {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgb(6 6 8 / 85%), transparent 45%);
+      opacity: 0;
+      transition: opacity var(--dur-base) var(--ease-out);
+    }
+
+    .favorite {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      opacity: 0;
+      transition: all var(--dur-base) var(--ease-out);
+      transform: translateY(-4px);
+
+      button {
+        background: rgb(8 8 10 / 50%);
+      }
+    }
+
+    .play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transition: all var(--dur-base) var(--ease-spring);
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+  }
+
+  .info {
+    padding: 11px 2px 0;
+
+    .title {
+      overflow: hidden;
+      color: var(--text);
+      font-size: var(--text-base);
+      font-weight: var(--fw-semibold);
+      line-height: 1.3;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .sub {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+      color: var(--text-subtle);
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+
+      .dot {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--text-faint);
+      }
+    }
+  }
+}
