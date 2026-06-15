@@ -1,13 +1,25 @@
-import '@/styles/index.scss'
-import '@/styles/fonts.ts'
+import '@/app/styles/index.scss'
+import '@/app/styles/fonts.ts'
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import App from './App.tsx'
+import { ThemeProvider } from 'next-themes'
+import { Provider } from 'react-redux'
 
-createRoot(document.getElementById('root')!).render(
+import App from './app/App.tsx'
+import { store } from './app/store'
+
+const root = document.getElementById('root')
+
+if (!root) throw new Error('Root element not found')
+
+createRoot(root).render(
   <StrictMode>
-    <App />
+    <Provider store={store}>
+      <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false}>
+        <App />
+      </ThemeProvider>
+    </Provider>
   </StrictMode>,
 )

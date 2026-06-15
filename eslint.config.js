@@ -40,7 +40,10 @@ export default defineConfig([
     rules: {
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        { fixStyle: 'inline-type-imports' },
+      ],
       '@typescript-eslint/no-non-null-assertion': 'warn',
       // Disable overly strict unsafe-any rules
       '@typescript-eslint/no-unsafe-argument': 'off',
@@ -49,7 +52,7 @@ export default defineConfig([
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unsafe-return': 'off',
 
-      'eqeqeq': ['error', 'always'],
+      eqeqeq: ['error', 'always'],
       'no-console': 'warn',
 
       'simple-import-sort/exports': 'error',
@@ -71,7 +74,10 @@ export default defineConfig([
     rules: {
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        { fixStyle: 'inline-type-imports' },
+      ],
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': ['error', { groups: importSortGroups }],
     },

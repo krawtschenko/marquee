@@ -3,7 +3,9 @@ import { themes } from 'storybook/theming'
 
 const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: light)')
 
-const applySystemTheme = ({ matches }: MediaQueryList | MediaQueryListEvent) => {
+const applySystemTheme = ({
+  matches,
+}: MediaQueryList | MediaQueryListEvent) => {
   addons.setConfig({
     theme: matches ? themes.light : themes.dark,
   })
