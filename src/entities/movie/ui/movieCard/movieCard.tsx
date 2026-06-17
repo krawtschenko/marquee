@@ -11,6 +11,7 @@ type Props = ComponentPropsWithoutRef<'article'> & {
   posterPath?: string
   voteAverage: number
   releaseDate: string
+  runtime: string
 }
 
 export const MovieCard = ({
@@ -18,6 +19,7 @@ export const MovieCard = ({
   posterPath,
   voteAverage,
   releaseDate,
+  runtime,
   className,
   ...rest
 }: Props) => {
@@ -28,7 +30,7 @@ export const MovieCard = ({
           <img src={posterPath} alt={`poster ${title}`} />
         ) : (
           <div className={s.noImg}>
-            <ImageOff size={28}/>
+            <ImageOff size={28} />
           </div>
         )}
         <RatingBadge score={voteAverage} className={s.rank} pill />
@@ -43,7 +45,10 @@ export const MovieCard = ({
 
       <div className={s.info}>
         <div className={s.title}>{title}</div>
-        <div className={s.sub}>{releaseDate}</div>
+        <div className={s.sub}>
+          {releaseDate} <span></span>
+          {runtime}
+        </div>
       </div>
     </article>
   )

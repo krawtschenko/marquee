@@ -22,6 +22,7 @@ const meta: Meta<typeof MovieCard> = {
     posterPath: POSTER,
     voteAverage: 8.6,
     releaseDate: '2014',
+    runtime: '2123',
   },
 }
 

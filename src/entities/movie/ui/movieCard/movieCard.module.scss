@@ -60,19 +60,6 @@
       transition: opacity var(--dur-base) var(--ease-out);
     }
 
-    .favorite {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      opacity: 0;
-      transition: all var(--dur-base) var(--ease-out);
-      transform: translateY(-4px);
-
-      button {
-        background: rgb(8 8 10 / 50%);
-      }
-    }
-
     .actions {
       position: absolute;
       right: 12px;
@@ -113,10 +100,20 @@
     }
 
     .sub {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       margin-top: 4px;
       color: var(--text-subtle);
       font-family: var(--font-mono);
       font-size: var(--text-xs);
+
+      span {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--text-faint);
+      }
     }
   }
 }
