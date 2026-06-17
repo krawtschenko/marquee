@@ -14,12 +14,13 @@ export const IconButton = ({
   icon: Icon,
   variant = 'primary',
   size = 'md',
+  className,
   ...rest
 }: Props) => {
   const iconSize = size === 'sm' ? 15 : size === 'lg' ? 22 : 18
 
   return (
-    <button className={clsx(s.btn, s[variant], s[size])} {...rest}>
+    <button className={clsx(s.btn, s[variant], s[size], className)} {...rest}>
       <Icon size={iconSize} />
     </button>
   )
