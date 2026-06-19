@@ -27,6 +27,13 @@
     opacity: 0.4;
   }
 
+  &.active {
+    svg {
+      color: var(--accent);
+      fill: var(--accent);
+    }
+  }
+
   &.primary {
     background: var(--surface-raised);
     color: var(--text-muted);

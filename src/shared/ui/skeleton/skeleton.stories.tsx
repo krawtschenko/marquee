@@ -34,7 +34,7 @@ export const Poster: Story = {
 
 export const Rectangle: Story = {
   args: {
-    style: { width: 200, height: 80 },
+    style: { width: 200, height: 80, borderRadius: 'var(--radius-md)' },
   },
 }
 

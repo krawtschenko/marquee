@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { Heart, ImageOff, Play } from 'lucide-react'
 import type { ComponentPropsWithoutRef } from 'react'
 
-import { Button, IconButton, RatingBadge } from '@/shared/ui'
+import { Button, IconButton, RatingBadge, Skeleton, SkeletonTextBlock } from '@/shared/ui'
 
 import s from './movieCard.module.scss'
 
@@ -12,6 +12,9 @@ type Props = ComponentPropsWithoutRef<'article'> & {
   voteAverage: number
   releaseDate: string
   runtime: string
+  favorite?: boolean
+  onFavoriteChange?: (favorite: boolean) => void
+  onTrailerClick?: () => void
 }
 
 export const MovieCard = ({
@@ -20,9 +23,14 @@ export const MovieCard = ({
   voteAverage,
   releaseDate,
   runtime,
+  favorite = false,
+  onFavoriteChange,
+  onTrailerClick,
   className,
   ...rest
 }: Props) => {
+  const handleFavoriteClick = () => onFavoriteChange?.(!favorite)
+
   return (
     <article className={clsx(s.card, className)} {...rest}>
       <div className={s.poster}>
@@ -33,13 +41,22 @@ export const MovieCard = ({
             <ImageOff size={28} />
           </div>
         )}
+
         <RatingBadge score={voteAverage} className={s.rank} pill />
+
         <div className={s.scrim}></div>
+
         <div className={s.actions}>
-          <Button icon={Play} size="sm" className={s.trailer}>
+          <Button icon={Play} size="sm" className={s.trailer} onClick={onTrailerClick}>
             Trailer
           </Button>
-          <IconButton icon={Heart} size="sm" />
+
+          <IconButton
+            icon={Heart}
+            size="sm"
+            active={favorite}
+            onClick={handleFavoriteClick}
+          />
         </div>
       </div>
 
@@ -51,5 +68,17 @@ export const MovieCard = ({
         </div>
       </div>
     </article>
+  )
+}
+
+export const MovieCardSkeleton = ({ className, ...rest }: ComponentPropsWithoutRef<'div'>) => {
+  return (
+    <div className={clsx(s.skeletonCard, className)} {...rest}>
+      <Skeleton variant="poster" />
+      <SkeletonTextBlock className={s.skeletonInfo}>
+        <Skeleton variant="line" />
+        <Skeleton variant="line" style={{ width: '60%' }} />
+      </SkeletonTextBlock>
+    </div>
   )
 }

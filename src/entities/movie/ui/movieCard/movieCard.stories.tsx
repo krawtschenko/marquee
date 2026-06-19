@@ -1,11 +1,13 @@
+import { useState } from 'react'
+
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { MovieCard } from './movieCard'
+import { MovieCard, MovieCardSkeleton } from './movieCard'
 
 const POSTER = 'https://picsum.photos/seed/movie/300/450'
 
 const meta: Meta<typeof MovieCard> = {
-  title: 'Entities/Movie/MovieCard',
+  title: 'Entities/MovieCard',
   component: MovieCard,
   parameters: {
     layout: 'centered',
@@ -23,6 +25,12 @@ const meta: Meta<typeof MovieCard> = {
     voteAverage: 8.6,
     releaseDate: '2014',
     runtime: '2123',
+    onTrailerClick: () => alert('Trailer clicked'),
+  },
+  render: (args) => {
+    const [favorite, setFavorite] = useState(false)
+
+    return <MovieCard {...args} favorite={favorite} onFavoriteChange={setFavorite} />
   },
 }
 
@@ -63,4 +71,8 @@ export const NoPoster: Story = {
   args: {
     posterPath: undefined,
   },
+}
+
+export const Loading: StoryObj = {
+  render: () => <MovieCardSkeleton />,
 }

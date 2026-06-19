@@ -1,7 +1,6 @@
 .skel {
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-sm);
   background: var(--skeleton-base);
 
   &::after {

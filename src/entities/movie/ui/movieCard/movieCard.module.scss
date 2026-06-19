@@ -6,7 +6,7 @@
 
   &:hover {
     img {
-      transform: scale(1.07);
+      transform: scale(1.06);
     }
 
     .poster {
@@ -34,6 +34,7 @@
     img {
       position: absolute;
       inset: 0;
+      filter: brightness(0.8);
       transition: transform var(--dur-slow) var(--ease-out);
     }
 
@@ -115,5 +116,13 @@
         background: var(--text-faint);
       }
     }
+  }
+}
+
+.skeletonCard {
+  width: 200px;
+
+  .skeletonInfo {
+    padding: 11px 2px 0;
   }
 }

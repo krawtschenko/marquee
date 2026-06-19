@@ -1,11 +1,13 @@
+import { useState } from 'react'
+
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { TvShowCard } from './tvShowCard'
+import { TvShowCard, TvShowCardSkeleton } from './tvShowCard'
 
-const POSTER = 'https://picsum.photos/seed/tvshow/300/450'
+const POSTER = 'https://picsum.photos/seed/tvshow/800/500'
 
 const meta: Meta<typeof TvShowCard> = {
-  title: 'Entities/TvShow/TvShowCard',
+  title: 'Entities/TvShowCard',
   component: TvShowCard,
   parameters: {
     layout: 'centered',
@@ -23,6 +25,13 @@ const meta: Meta<typeof TvShowCard> = {
     voteAverage: 9.5,
     firstAirDate: '2008',
     seasons: '5 Seasons',
+    episodes: '62 Episodes',
+    onTrailerClick: () => alert('Trailer clicked'),
+  },
+  render: (args) => {
+    const [favorite, setFavorite] = useState(false)
+
+    return <TvShowCard {...args} favorite={favorite} onFavoriteChange={setFavorite} />
   },
 }
 
@@ -37,7 +46,7 @@ export const HighRated: Story = {
     title: 'The Wire',
     voteAverage: 9.3,
     firstAirDate: '2002',
-    posterPath: 'https://picsum.photos/seed/thewire/300/450',
+    posterPath: 'https://picsum.photos/seed/thewire/800/500',
   },
 }
 
@@ -46,7 +55,7 @@ export const LowRated: Story = {
     title: 'Velma',
     voteAverage: 2.9,
     firstAirDate: '2023',
-    posterPath: 'https://picsum.photos/seed/velma/300/450',
+    posterPath: 'https://picsum.photos/seed/velma/800/500',
   },
 }
 
@@ -55,7 +64,7 @@ export const LongTitle: Story = {
     title: 'The Legend of Vox Machina',
     voteAverage: 8.1,
     firstAirDate: '2022',
-    posterPath: 'https://picsum.photos/seed/voxmachina/300/450',
+    posterPath: 'https://picsum.photos/seed/voxmachina/800/500',
   },
 }
 
@@ -63,4 +72,8 @@ export const NoPoster: Story = {
   args: {
     posterPath: undefined,
   },
+}
+
+export const Loading: StoryObj = {
+  render: () => <TvShowCardSkeleton />,
 }

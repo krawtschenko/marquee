@@ -1,1 +1,1 @@
-export { TvShowCard } from './tvShowCard'
+export { TvShowCard, TvShowCardSkeleton } from './tvShowCard'
