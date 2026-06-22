@@ -1,7 +1,6 @@
+import { RootLayout } from '@app/layouts/root'
+import { HomePage } from '@pages/home'
 import { createBrowserRouter } from 'react-router-dom'
-
-import { RootLayout } from '@/app/layouts/root'
-import { HomePage } from '@/pages/home'
 
 import { paths } from './paths'
 

@@ -16,7 +16,12 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(dirname, 'src'),
+      '@app':      path.resolve(dirname, 'src/01-app'),
+      '@pages':    path.resolve(dirname, 'src/02-pages'),
+      '@widgets':  path.resolve(dirname, 'src/03-widgets'),
+      '@features': path.resolve(dirname, 'src/04-features'),
+      '@entities': path.resolve(dirname, 'src/05-entities'),
+      '@shared':   path.resolve(dirname, 'src/06-shared'),
     },
   },
   test: {

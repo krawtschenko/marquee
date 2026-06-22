@@ -1,8 +1,7 @@
+import { Button, IconButton, RatingBadge, Skeleton, SkeletonTextBlock } from '@shared/ui'
 import clsx from 'clsx'
 import { Heart, ImageOff, Play } from 'lucide-react'
 import type { ComponentPropsWithoutRef } from 'react'
-
-import { Button, IconButton, RatingBadge, Skeleton, SkeletonTextBlock } from '@/shared/ui'
 
 import s from './movieCard.module.scss'
 

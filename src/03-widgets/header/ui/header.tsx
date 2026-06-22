@@ -1,11 +1,10 @@
 import { type ComponentPropsWithoutRef } from 'react'
 
+import { paths } from '@app/router'
+import { Avatar, IconButton, Logo, SearchInput } from '@shared/ui'
 import clsx from 'clsx'
 import { Moon, Sun } from 'lucide-react'
 import { Link, NavLink } from 'react-router-dom'
-
-import { paths } from '@/app/router'
-import { Avatar, IconButton, Logo, SearchInput } from '@/shared/ui'
 
 import s from './header.module.scss'
 
