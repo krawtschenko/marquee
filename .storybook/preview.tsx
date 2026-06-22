@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 
-import '../src/app/styles/fonts'
-import '../src/app/styles/index.scss'
+import '../src/01-app/styles/fonts.ts'
+import '../src/01-app/styles/index.scss'
 
 import type { Preview } from '@storybook/react-vite'
 import { themes } from 'storybook/theming'
