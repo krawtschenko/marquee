@@ -9,7 +9,7 @@ type Props = ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Root> & {
   label?: string
 }
 
-export const Dropdown = ({ children, trigger, label, ...rest }: Props) => {
+export function Dropdown({ children, trigger, label, ...rest }: Props) {
   return (
     <DropdownMenuPrimitive.Root {...rest}>
       <DropdownMenuPrimitive.Trigger asChild>
@@ -39,11 +39,11 @@ type DropdownItemProps = ComponentPropsWithoutRef<
   danger?: boolean
 }
 
-export const DropdownItem = ({
+export function DropdownItem({
   className,
   danger,
   ...rest
-}: DropdownItemProps) => {
+}: DropdownItemProps) {
   return (
     <DropdownMenuPrimitive.Item
       className={clsx(s.item, danger && s.danger, className)}
@@ -56,10 +56,10 @@ type DropdownSeparatorProps = ComponentPropsWithoutRef<
   typeof DropdownMenuPrimitive.Separator
 >
 
-export const DropdownSeparator = ({
+export function DropdownSeparator({
   className,
   ...rest
-}: DropdownSeparatorProps) => {
+}: DropdownSeparatorProps) {
   return (
     <DropdownMenuPrimitive.Separator
       className={clsx(s.separator, className)}

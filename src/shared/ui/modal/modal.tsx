@@ -7,7 +7,7 @@ type Props = ComponentPropsWithoutRef<typeof DialogPrimitive.Root> & {
   trigger: ReactNode
 }
 
-export const Modal = ({ children, trigger, ...rest }: Props) => {
+export function Modal({ children, trigger, ...rest }: Props) {
   return (
     <DialogPrimitive.Root {...rest}>
       <DialogPrimitive.Trigger asChild>{trigger}</DialogPrimitive.Trigger>
@@ -24,6 +24,6 @@ export const Modal = ({ children, trigger, ...rest }: Props) => {
 
 type ModalCloseProps = ComponentPropsWithoutRef<typeof DialogPrimitive.Close>
 
-export const ModalClose = ({ ...rest }: ModalCloseProps) => {
+export function ModalClose({ ...rest }: ModalCloseProps) {
   return <DialogPrimitive.Close asChild {...rest} />
 }

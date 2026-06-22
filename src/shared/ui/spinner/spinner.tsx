@@ -7,6 +7,6 @@ type SpinnerProps = ComponentPropsWithoutRef<'span'> & {
   size?: 'sm' | 'md' | 'lg'
 }
 
-export const Spinner = ({ size = 'md', className, ...rest }: SpinnerProps) => {
+export function Spinner({ size = 'md', className, ...rest }: SpinnerProps) {
   return <span className={clsx(s.spinner, s[size], className)} {...rest} />
 }

@@ -11,14 +11,14 @@ type Props = ComponentPropsWithoutRef<'button'> & {
   active?: boolean
 }
 
-export const IconButton = ({
+export function IconButton({
   icon: Icon,
   variant = 'primary',
   size = 'md',
   active = false,
   className,
   ...rest
-}: Props) => {
+}: Props) {
   const iconSize = size === 'sm' ? 15 : size === 'lg' ? 22 : 18
 
   return (

@@ -20,7 +20,7 @@ const navItems = [
   { to: 'test2', label: 'Test2' },
 ]
 
-export const Header = ({ className, theme, setTheme, ...rest }: Props) => {
+export function Header({ className, theme, setTheme, ...rest }: Props) {
   return (
     <header className={clsx(s.header, className)} {...rest}>
       <Link to={'#'} className={s.brand}>

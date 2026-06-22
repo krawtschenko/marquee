@@ -17,7 +17,7 @@ type Props = ComponentPropsWithoutRef<'article'> & {
   onTrailerClick?: () => void
 }
 
-export const MovieCard = ({
+export function MovieCard({
   title,
   posterPath,
   voteAverage,
@@ -28,7 +28,7 @@ export const MovieCard = ({
   onTrailerClick,
   className,
   ...rest
-}: Props) => {
+}: Props) {
   const handleFavoriteClick = () => onFavoriteChange?.(!favorite)
 
   return (
@@ -71,7 +71,7 @@ export const MovieCard = ({
   )
 }
 
-export const MovieCardSkeleton = ({ className, ...rest }: ComponentPropsWithoutRef<'div'>) => {
+export function MovieCardSkeleton({ className, ...rest }: ComponentPropsWithoutRef<'div'>) {
   return (
     <div className={clsx(s.skeletonCard, className)} {...rest}>
       <Skeleton variant="poster" />

@@ -32,13 +32,13 @@ const buildPages = (
   return pages
 }
 
-export const Pagination = ({
+export function Pagination({
   page,
   total,
   siblings = 1,
   onChange,
   className,
-}: Props) => {
+}: Props) {
   const pages = buildPages(page, total, siblings)
 
   return (

@@ -9,14 +9,14 @@ type Props = ComponentPropsWithoutRef<'span'> & {
   dot?: boolean
 }
 
-export const Badge = ({
+export function Badge({
   className,
   variant = 'soft',
   size = 'lg',
   dot,
   children,
   ...rest
-}: Props) => {
+}: Props) {
   return (
     <span
       className={clsx(s.badge, s[variant], s[size], dot && s.dot, className)}

@@ -10,7 +10,7 @@ type SwitchProps = ComponentPropsWithoutRef<typeof SwitchPrimitive.Root> & {
   loading?: boolean
 }
 
-export const Switch = ({ className, label, loading, ...rest }: SwitchProps) => {
+export function Switch({ className, label, loading, ...rest }: SwitchProps) {
   return (
     <label className={clsx(s.label, className)}>
       <SwitchPrimitive.Root className={clsx(s.root)} {...rest}>

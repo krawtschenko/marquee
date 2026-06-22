@@ -5,7 +5,7 @@ import s from './logo.module.scss'
 
 type Props = ComponentPropsWithoutRef<'div'> & { size: number }
 
-export const Logo = ({ className, size, ...rest }: Props) => {
+export function Logo({ className, size, ...rest }: Props) {
   return (
     <div
       className={clsx(s.aperture, className)}

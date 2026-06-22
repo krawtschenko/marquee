@@ -7,7 +7,7 @@ type ProgressBarProps = ComponentPropsWithoutRef<'div'> & {
   thin?: boolean
 }
 
-export const ProgressBar = ({ thin, className, ...rest }: ProgressBarProps) => {
+export function ProgressBar({ thin, className, ...rest }: ProgressBarProps) {
   return (
     <div
       className={clsx(s.progress, thin && s.thin, className)}

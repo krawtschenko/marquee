@@ -10,13 +10,13 @@ type Props = ComponentPropsWithoutRef<'div'> & {
   pill?: boolean
 }
 
-export const RatingBadge = ({
+export function RatingBadge({
   className,
   score,
   max,
   pill,
   ...rest
-}: Props) => {
+}: Props) {
   return (
     <div className={clsx(s.rating, pill && s.pill, className)} {...rest}>
       <span className={s.star}>

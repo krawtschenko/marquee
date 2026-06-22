@@ -9,11 +9,11 @@ type Props<T extends ElementType = 'div'> = {
   className?: string
 } & Omit<ComponentPropsWithoutRef<T>, 'as' | 'className'>
 
-export const Container = <T extends ElementType = 'div'>({
+export function Container<T extends ElementType = 'div'>({
   as,
   className,
   ...rest
-}: Props<T>) => {
+}: Props<T>) {
   const Tag = as ?? 'div'
 
   return <Tag className={clsx(s.container, className)} {...rest} />

@@ -21,13 +21,13 @@ type Props = {
   className?: string
 }
 
-export const StarRating = ({
+export function StarRating({
   value,
   onChange,
   showLabel,
   readonly,
   className,
-}: Props) => {
+}: Props) {
   const [hovered, setHovered] = useState<number | null>(null)
 
   const displayed = hovered ?? value

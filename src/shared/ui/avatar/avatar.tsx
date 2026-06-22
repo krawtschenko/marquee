@@ -13,13 +13,13 @@ type Props = ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & {
   size?: 'xs' | 'sm' | 'md' | 'lg'
 }
 
-export const Avatar = ({
+export function Avatar({
   src,
   fallback,
   size = 'md',
   className,
   ...rest
-}: Props) => {
+}: Props) {
   return (
     <AvatarPrimitive.Root
       tabIndex={0}

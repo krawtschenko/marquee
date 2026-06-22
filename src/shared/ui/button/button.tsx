@@ -12,7 +12,7 @@ type Props<T extends ElementType = 'button'> = ComponentPropsWithoutRef<T> & {
   loading?: boolean
 }
 
-export const Button = <T extends ElementType = 'button'>(props: Props<T>) => {
+export function Button<T extends ElementType = 'button'>(props: Props<T>) {
   const {
     as: Tag = 'button',
     children,

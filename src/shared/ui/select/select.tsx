@@ -10,7 +10,7 @@ type Props = ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
   label?: string
 }
 
-export const Select = ({ children, placeholder, label, ...rest }: Props) => {
+export function Select({ children, placeholder, label, ...rest }: Props) {
   return (
     <SelectPrimitive.Root {...rest}>
       {label && <SelectPrimitive.Label>{label}</SelectPrimitive.Label>}
@@ -38,11 +38,11 @@ export const Select = ({ children, placeholder, label, ...rest }: Props) => {
 
 type SelectItemProps = ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
 
-export const SelectItem = ({
+export function SelectItem({
   children,
   className,
   ...rest
-}: SelectItemProps) => {
+}: SelectItemProps) {
   return (
     <SelectPrimitive.Item className={clsx(s.item, className)} {...rest}>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>

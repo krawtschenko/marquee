@@ -30,7 +30,7 @@ const linkItems = {
   ],
 }
 
-export const Footer = ({ className, ...rest }: Props) => {
+export function Footer({ className, ...rest }: Props) {
   return (
     <footer className={clsx(s.footer, className)} {...rest}>
       <div className={s.grid}>

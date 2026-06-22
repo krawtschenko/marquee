@@ -14,7 +14,7 @@ type Props = ComponentPropsWithoutRef<'div'> & {
   text: string
 }
 
-export const ReadMore = ({ text, className, ...rest }: Props) => {
+export function ReadMore({ text, className, ...rest }: Props) {
   const [clamped, setClamped] = useState(true)
   const [overflows, setOverflows] = useState(false)
   const textRef = useRef<HTMLParagraphElement>(null)

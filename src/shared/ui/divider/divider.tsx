@@ -8,12 +8,12 @@ type Props = ComponentPropsWithoutRef<'div'> & {
   label?: string
 }
 
-export const Divider = ({
+export function Divider({
   className,
   orientation = 'horizontal',
   label,
   ...rest
-}: Props) => {
+}: Props) {
   if (orientation === 'vertical') {
     return (
       <div

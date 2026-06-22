@@ -8,7 +8,7 @@ type Props = ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & {
   showTicks?: boolean
 }
 
-export const Slider = ({
+export function Slider({
   className,
   showTicks,
   min,
@@ -16,7 +16,7 @@ export const Slider = ({
   value,
   defaultValue,
   ...rest
-}: Props) => {
+}: Props) {
   return (
     <div className={className}>
       <SliderPrimitive.Root

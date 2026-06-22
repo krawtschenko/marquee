@@ -12,7 +12,7 @@ type Props = ComponentPropsWithoutRef<'input'> & {
   error?: boolean
 }
 
-export const Field = ({
+export function Field({
   id,
   className,
   label,
@@ -20,7 +20,7 @@ export const Field = ({
   hint,
   error,
   ...rest
-}: Props) => {
+}: Props) {
   const generateId = useId()
   const fieldId = id ?? generateId
 

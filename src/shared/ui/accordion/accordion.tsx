@@ -6,29 +6,29 @@ import { ChevronDown } from 'lucide-react'
 
 import s from './accordion.module.scss'
 
-export const Accordion = ({
+export function Accordion({
   className,
   ...rest
-}: ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>) => {
+}: ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>) {
   return (
     <AccordionPrimitive.Root className={clsx(s.root, className)} {...rest} />
   )
 }
 
-export const AccordionItem = ({
+export function AccordionItem({
   className,
   ...rest
-}: ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>) => {
+}: ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>) {
   return (
     <AccordionPrimitive.Item className={clsx(s.item, className)} {...rest} />
   )
 }
 
-export const AccordionTrigger = ({
+export function AccordionTrigger({
   className,
   children,
   ...rest
-}: ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>) => {
+}: ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>) {
   return (
     <AccordionPrimitive.Trigger
       className={clsx(s.trigger, className)}
@@ -40,11 +40,11 @@ export const AccordionTrigger = ({
   )
 }
 
-export const AccordionContent = ({
+export function AccordionContent({
   className,
   children,
   ...rest
-}: ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>) => {
+}: ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>) {
   return (
     <AccordionPrimitive.Content
       className={clsx(s.content, className)}

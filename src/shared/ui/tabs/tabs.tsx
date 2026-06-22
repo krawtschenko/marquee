@@ -5,11 +5,11 @@ import clsx from 'clsx'
 
 import s from './tabs.module.scss'
 
-export const Tabs = ({
+export function Tabs({
   className,
   children,
   ...rest
-}: ComponentPropsWithoutRef<typeof TabsPrimitive.Root>) => {
+}: ComponentPropsWithoutRef<typeof TabsPrimitive.Root>) {
   return (
     <TabsPrimitive.Root className={clsx(s.root, className)} {...rest}>
       <TabsPrimitive.List className={s.list}>{children}</TabsPrimitive.List>
@@ -17,10 +17,10 @@ export const Tabs = ({
   )
 }
 
-export const TabsTrigger = ({
+export function TabsTrigger({
   className,
   ...rest
-}: ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>) => {
+}: ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>) {
   return (
     <TabsPrimitive.Trigger className={clsx(s.trigger, className)} {...rest} />
   )
