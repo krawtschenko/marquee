@@ -1,2 +1,124 @@
 .hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 600px;
+
+  .bg,
+  .scrim {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+  }
+
+  .bg {
+    background-color: var(--surface-raised);
+    background-image: repeating-linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent) 7%, transparent) 0 2px,
+      transparent 2px 16px
+    );
+  }
+
+  .scrim {
+    background:
+      linear-gradient(
+        0deg,
+        var(--bg) 1%,
+        color-mix(in srgb, var(--bg) 28%, transparent) 30%,
+        rgb(8 8 10 / 42%) 62%,
+        rgb(8 8 10 / 50%) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgb(8 8 10 / 88%) 0%,
+        rgb(8 8 10 / 40%) 48%,
+        transparent 76%
+      );
+  }
+
+  .content {
+    position: relative;
+    width: 100%;
+    padding: 48px 0;
+
+    .meta {
+      min-width: 0;
+      padding-bottom: 6px;
+
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+        color: var(--accent-fg);
+        font-family: var(--font-mono);
+        font-size: var(--text-2xs);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+
+        span:first-child {
+          display: inline-block;
+          width: 24px;
+          height: 1px;
+          background: var(--accent);
+        }
+      }
+
+      h1 {
+        margin: 14px 0 6px;
+        color: #f7f5ef;
+        font-family: var(--font-display);
+        font-size: var(--text-5xl);
+        font-weight: var(--fw-semibold);
+        line-height: var(--lh-tight);
+        letter-spacing: var(--ls-tight);
+        text-wrap: balance;
+      }
+
+      .facts {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 20px;
+        color: rgb(244 242 236 / 82%);
+        font-family: var(--font-mono);
+        font-size: var(--text-sm);
+
+        .sep {
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          background: rgb(244 242 236 / 40%);
+        }
+      }
+
+      .text p {
+        max-width: 500px;
+        color: #d8d6cf;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin-top: 26px;
+
+        button:first-child {
+          svg {
+            fill: currentcolor;
+          }
+        }
+
+        button:last-child {
+          background: rgb(255 255 255 / 10%);
+        }
+      }
+    }
+  }
 }

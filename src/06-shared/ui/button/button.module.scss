@@ -25,6 +25,10 @@
       0 0 0 4px var(--focus-ring);
   }
 
+  &:active {
+    transform: scale(0.97);
+  }
+
   &:disabled {
     cursor: not-allowed;
     pointer-events: none;
