@@ -7,7 +7,8 @@ import { useHero } from './useHero'
 
 export function Hero() {
   const { movies, isLoading } = useHero()
-  const backdropUrl = getTmdbBackdropUrl(movies[0]?.backdrop_path, 'original')
+  const movie = movies[0]
+  const backdropUrl = getTmdbBackdropUrl(movie?.backdrop_path, 'original')
 
   // if (isLoading) return
 
@@ -15,27 +16,30 @@ export function Hero() {
     <section className={s.hero}>
       <div
         className={s.bg}
-        style={{
-          backgroundImage: backdropUrl ? `url(${backdropUrl})` : undefined,
-        }}
-      ></div>
-      <div className={s.scrim}></div>
+        style={{ backgroundImage: backdropUrl ? `url(${backdropUrl})` : undefined }}
+      />
+      <div className={s.scrim} />
+
       <div className={s.content}>
         <div className={s.meta}>
           <div className={s.kicker}>
-            <span></span>
+            <span />
             <span>Popular Movies</span>
           </div>
-          <h1>{movies[0]?.title}</h1>
+
+          <h1>{movie?.title}</h1>
+
           <div className={s.facts}>
-            <ScoreRing score={movies[0]?.vote_average} />
-            <span>{movies[0]?.release_date}</span>
-            <span className={s.sep}></span>
+            <ScoreRing score={movie?.vote_average} />
+            <span>{movie?.release_date}</span>
+            <span className={s.sep} />
             <span>Runtime</span>
-            <span className={s.sep}></span>
-            <span>{movies[0]?.genre_ids}</span>
+            <span className={s.sep} />
+            <span>{movie?.genre_ids}</span>
           </div>
-          <ReadMore text={movies[0]?.overview} className={s.text} />
+
+          <ReadMore text={movie?.overview} className={s.text} />
+
           <div className={s.actions}>
             <Button size="lg" icon={Play}>
               Watch trailer
