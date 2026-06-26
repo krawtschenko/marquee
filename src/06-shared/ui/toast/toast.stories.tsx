@@ -10,7 +10,7 @@ const meta: Meta = {
     (Story) => (
       <>
         <Story />
-        <ToastContainer position="bottom-right" theme="colored" />
+        <ToastContainer position="top-center" theme="colored" />
       </>
     ),
   ],
@@ -22,18 +22,13 @@ type Story = StoryObj
 
 export const Success: Story = {
   render: () => (
-    <Button onClick={() => toast.success('Changes saved successfully')}>
-      Show Success
-    </Button>
+    <Button onClick={() => toast.success('Changes saved successfully')}>Show Success</Button>
   ),
 }
 
 export const Error: Story = {
   render: () => (
-    <Button
-      variant="danger"
-      onClick={() => toast.error('Something went wrong')}
-    >
+    <Button variant="danger" onClick={() => toast.error('Something went wrong')}>
       Show Error
     </Button>
   ),
@@ -41,10 +36,7 @@ export const Error: Story = {
 
 export const Warning: Story = {
   render: () => (
-    <Button
-      variant="secondary"
-      onClick={() => toast.warning('Proceed with caution')}
-    >
+    <Button variant="secondary" onClick={() => toast.warning('Proceed with caution')}>
       Show Warning
     </Button>
   ),
@@ -61,25 +53,14 @@ export const Info: Story = {
 export const AllTypes: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 12 }}>
-      <Button onClick={() => toast.success('Changes saved successfully')}>
-        Success
-      </Button>
-      <Button
-        variant="danger"
-        onClick={() => toast.error('Something went wrong')}
-      >
+      <Button onClick={() => toast.success('Changes saved successfully')}>Success</Button>
+      <Button variant="danger" onClick={() => toast.error('Something went wrong')}>
         Error
       </Button>
-      <Button
-        variant="secondary"
-        onClick={() => toast.warning('Proceed with caution')}
-      >
+      <Button variant="secondary" onClick={() => toast.warning('Proceed with caution')}>
         Warning
       </Button>
-      <Button
-        variant="ghost"
-        onClick={() => toast.info('New update available')}
-      >
+      <Button variant="ghost" onClick={() => toast.info('New update available')}>
         Info
       </Button>
     </div>

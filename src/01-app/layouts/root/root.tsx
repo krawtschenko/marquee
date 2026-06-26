@@ -1,5 +1,3 @@
-import 'react-toastify/dist/ReactToastify.css'
-
 import { Container } from '@shared/ui'
 import { Footer } from '@widgets/footer'
 import { Header } from '@widgets/header'
@@ -20,7 +18,7 @@ export function RootLayout() {
       </main>
       <Footer />
 
-      <ToastContainer />
+      <ToastContainer theme="colored" />
     </>
   )
 }

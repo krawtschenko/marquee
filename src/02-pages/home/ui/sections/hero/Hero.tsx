@@ -5,6 +5,7 @@ import { formatRuntime } from '@shared/lib/format-runtime'
 import { getTmdbBackdropUrl } from '@shared/lib/tmdb-image'
 import { Button, IconButton, ReadMore, ScoreRing, Spinner } from '@shared/ui'
 import { Info, Play, Plus } from 'lucide-react'
+import { toast } from 'react-toastify'
 
 import s from './hero.module.scss'
 import { useHero } from './useHero'
@@ -59,7 +60,7 @@ export function Hero() {
           <ReadMore text={movieDetail.overview} className={s.text} />
 
           <div className={s.actions}>
-            <Button size="lg" icon={Play}>
+            <Button size="lg" icon={Play} onClick={() => toast.success('Trailer')}>
               Watch trailer
             </Button>
             <Button size="lg" variant="secondary" icon={Plus}>
