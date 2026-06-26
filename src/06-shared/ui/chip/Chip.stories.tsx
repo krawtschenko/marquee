@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Chip, ChipItem } from './chip'
 
 const meta: Meta<typeof Chip> = {
-  title: 'UI/Chip',
+  title: 'Shared/Chip',
   component: Chip,
 }
 

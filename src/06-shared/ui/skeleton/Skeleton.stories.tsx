@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Skeleton, SkeletonTextBlock } from './skeleton'
 
 const meta: Meta<typeof Skeleton> = {
-  title: 'UI/Skeleton',
+  title: 'Shared/Skeleton',
   component: Skeleton,
 }
 

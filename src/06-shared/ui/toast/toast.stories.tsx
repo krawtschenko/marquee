@@ -4,7 +4,7 @@ import { toast, ToastContainer } from 'react-toastify'
 import { Button } from '../button/button'
 
 const meta: Meta = {
-  title: 'UI/Toast',
+  title: 'Shared/Toast',
   tags: ['!autodocs'],
   decorators: [
     (Story) => (

@@ -10,19 +10,14 @@ type Props = ComponentPropsWithoutRef<'div'> & {
   pill?: boolean
 }
 
-export function RatingBadge({
-  className,
-  score,
-  max,
-  pill,
-  ...rest
-}: Props) {
+export function RatingBadge({ className, score, max, pill, ...rest }: Props) {
   return (
     <div className={clsx(s.rating, pill && s.pill, className)} {...rest}>
       <span className={s.star}>
         <Star />
       </span>
-      <span className={s.score}>{score}</span>
+      <span className={s.score}>{Number.isInteger(score) ? score.toFixed(1) : score}</span>
+
       {max !== undefined && <span className={s.max}>/ {max}</span>}
     </div>
   )

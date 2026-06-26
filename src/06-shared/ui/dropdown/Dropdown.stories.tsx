@@ -4,7 +4,7 @@ import { LogOut } from 'lucide-react'
 import { Dropdown, DropdownItem, DropdownSeparator } from './dropdown'
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'UI/Dropdown',
+  title: 'Shared/Dropdown',
   component: Dropdown,
 }
 

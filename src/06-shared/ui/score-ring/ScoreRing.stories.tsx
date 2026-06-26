@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { ScoreRing } from './ScoreRing'
 
 const meta: Meta<typeof ScoreRing> = {
-  title: 'UI/ScoreRing',
+  title: 'Shared/ScoreRing',
   component: ScoreRing,
   args: {
     score: 8.4,

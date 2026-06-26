@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Tabs, TabsTrigger } from './tabs'
 
 const meta: Meta<typeof Tabs> = {
-  title: 'UI/Tabs',
+  title: 'Shared/Tabs',
   component: Tabs,
 }
 

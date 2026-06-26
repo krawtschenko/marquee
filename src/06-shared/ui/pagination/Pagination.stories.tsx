@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Pagination } from './pagination'
 
 const meta: Meta<typeof Pagination> = {
-  title: 'UI/Pagination',
+  title: 'Shared/Pagination',
   component: Pagination,
 }
 

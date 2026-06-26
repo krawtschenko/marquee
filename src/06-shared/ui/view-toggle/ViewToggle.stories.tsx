@@ -6,7 +6,7 @@ import { Grid2X2, LayoutList, Table2 } from 'lucide-react'
 import { ViewToggle, ViewTrigger } from './ViewToggle'
 
 const meta: Meta<typeof ViewToggle> = {
-  title: 'UI/ViewToggle',
+  title: 'Shared/ViewToggle',
   component: ViewToggle,
 }
 

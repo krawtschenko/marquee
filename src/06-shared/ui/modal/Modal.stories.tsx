@@ -4,7 +4,7 @@ import { Button } from '../button'
 import { Modal, ModalClose } from './modal'
 
 const meta: Meta<typeof Modal> = {
-  title: 'UI/Modal',
+  title: 'Shared/Modal',
   component: Modal,
 }
 

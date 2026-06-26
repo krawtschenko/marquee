@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { ReadMore } from './ReadMore'
 
 const meta: Meta<typeof ReadMore> = {
-  title: 'UI/ReadMore',
+  title: 'Shared/ReadMore',
   component: ReadMore,
 }
 

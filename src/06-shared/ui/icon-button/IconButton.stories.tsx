@@ -4,7 +4,7 @@ import { Play } from 'lucide-react'
 import { IconButton } from './IconButton'
 
 const meta: Meta<typeof IconButton> = {
-  title: 'UI/IconButton',
+  title: 'Shared/IconButton',
   component: IconButton,
 }
 

@@ -4,7 +4,7 @@ import { Play, Plus, Trash } from 'lucide-react'
 import { Button } from './button'
 
 const meta: Meta<typeof Button> = {
-  title: 'UI/Button',
+  title: 'Shared/Button',
   component: Button,
 }
 

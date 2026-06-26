@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Field } from './field'
 
 const meta: Meta<typeof Field> = {
-  title: 'UI/Field',
+  title: 'Shared/Field',
   component: Field,
 }
 

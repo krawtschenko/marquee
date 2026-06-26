@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Logo } from './logo'
 
 const meta: Meta<typeof Logo> = {
-  title: 'UI/Logo',
+  title: 'Shared/Logo',
   component: Logo,
   args: {
     size: 88,
