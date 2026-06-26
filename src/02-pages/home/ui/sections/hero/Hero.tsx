@@ -1,16 +1,29 @@
+import { Fragment } from 'react'
+
+import { getReleaseYear } from '@shared/lib/format-date'
+import { formatRuntime } from '@shared/lib/format-runtime'
 import { getTmdbBackdropUrl } from '@shared/lib/tmdb-image'
-import { Button, IconButton, ReadMore, ScoreRing } from '@shared/ui'
+import { Button, IconButton, ReadMore, ScoreRing, Spinner } from '@shared/ui'
 import { Info, Play, Plus } from 'lucide-react'
 
 import s from './hero.module.scss'
 import { useHero } from './useHero'
 
 export function Hero() {
-  const { movies, isLoading } = useHero()
-  const movie = movies[0]
-  const backdropUrl = getTmdbBackdropUrl(movie?.backdrop_path, 'original')
+  const { movieDetail, isLoading } = useHero()
 
-  // if (isLoading) return
+  if (isLoading || !movieDetail)
+    return (
+      <section className={s.hero}>
+        <div className={s.bg} />
+        <div className={s.scrim} />
+        <div className={s.loader}>
+          <Spinner size="lg" />
+        </div>
+      </section>
+    )
+
+  const backdropUrl = getTmdbBackdropUrl(movieDetail.backdrop_path, 'original')
 
   return (
     <section className={s.hero}>
@@ -27,18 +40,23 @@ export function Hero() {
             <span>Popular Movies</span>
           </div>
 
-          <h1>{movie?.title}</h1>
+          <h1>{movieDetail.title}</h1>
 
           <div className={s.facts}>
-            <ScoreRing score={movie?.vote_average} />
-            <span>{movie?.release_date}</span>
+            <ScoreRing score={movieDetail.vote_average} />
+            <span>{getReleaseYear(movieDetail.release_date)}</span>
             <span className={s.sep} />
-            <span>Runtime</span>
-            <span className={s.sep} />
-            <span>{movie?.genre_ids}</span>
+            <span>{formatRuntime(movieDetail.runtime)}</span>
+
+            {movieDetail.genres.map((g) => (
+              <Fragment key={g.id}>
+                <span className={s.sep} />
+                <span>{g.name}</span>
+              </Fragment>
+            ))}
           </div>
 
-          <ReadMore text={movie?.overview} className={s.text} />
+          <ReadMore text={movieDetail.overview} className={s.text} />
 
           <div className={s.actions}>
             <Button size="lg" icon={Play}>
