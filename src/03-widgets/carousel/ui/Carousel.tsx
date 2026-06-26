@@ -20,7 +20,9 @@ export function Carousel({ title, subTitle, linkTo, linkLabel = 'See all', child
 
   const scroll = (direction: 'left' | 'right') => {
     const el = scrollRef.current
+
     if (!el) return
+
     el.scrollBy({ left: direction === 'left' ? -el.offsetWidth : el.offsetWidth })
   }
 

@@ -17,7 +17,7 @@ export const movieSchema = z.object({
   vote_count: z.number().int(),
 })
 
-export const popularMoviesResponseSchema = z.object({
+export const moviesListResponseSchema = z.object({
   page: z.number().int(),
   results: z.array(movieSchema),
   total_pages: z.number().int(),
@@ -47,4 +47,3 @@ export const movieDetailSchema = z.object({
   genres: z.array(z.object({ id: z.number().int(), name: z.string() })),
   videos: z.object({ results: z.array(movieVideoSchema) }).optional(),
 })
-

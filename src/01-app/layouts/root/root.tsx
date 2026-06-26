@@ -1,8 +1,11 @@
+import 'react-toastify/dist/ReactToastify.css'
+
 import { Container } from '@shared/ui'
 import { Footer } from '@widgets/footer'
 import { Header } from '@widgets/header'
 import { useTheme } from 'next-themes'
 import { Outlet } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 
 export function RootLayout() {
   const { theme, setTheme } = useTheme()
@@ -16,6 +19,8 @@ export function RootLayout() {
         </Container>
       </main>
       <Footer />
+
+      <ToastContainer />
     </>
   )
 }
