@@ -15,13 +15,7 @@ type Story = StoryObj<typeof Field>
 
 const ControlledField = (props: React.ComponentProps<typeof Field>) => {
   const [value, setValue] = useState('')
-  return (
-    <Field
-      {...props}
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-    />
-  )
+  return <Field {...props} value={value} onChange={(e) => setValue(e.target.value)} />
 }
 
 export const Default: Story = {

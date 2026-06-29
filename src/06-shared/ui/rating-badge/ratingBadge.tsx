@@ -16,7 +16,7 @@ export function RatingBadge({ className, score, max, pill, ...rest }: Props) {
       <span className={s.star}>
         <Star />
       </span>
-      <span className={s.score}>{Number.isInteger(score) ? score.toFixed(1) : score}</span>
+      <span className={s.score}>{score.toFixed(1)}</span>
 
       {max !== undefined && <span className={s.max}>/ {max}</span>}
     </div>

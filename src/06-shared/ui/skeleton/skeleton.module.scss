@@ -6,12 +6,7 @@
   &::after {
     content: '';
     position: absolute;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      var(--skeleton-shine),
-      transparent
-    );
+    background: linear-gradient(90deg, transparent, var(--skeleton-shine), transparent);
     transform: translateX(-100%);
     animation: global(mq-shimmer) 1.4s ease-in-out infinite;
     inset: 0;

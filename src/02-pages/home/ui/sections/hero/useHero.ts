@@ -4,7 +4,7 @@ import { useGetMovieDetailQuery, useGetPopularMoviesQuery } from '@entities/movi
 import { skipToken } from '@reduxjs/toolkit/query/react'
 
 export function useHero() {
-  const { data: popularData, isLoading: isPopularLoading } = useGetPopularMoviesQuery()
+  const { data: popularData, isLoading: isPopularLoading } = useGetPopularMoviesQuery({})
 
   const [randomIndex] = useState(() => Math.floor(Math.random() * 20))
   const results = popularData?.results

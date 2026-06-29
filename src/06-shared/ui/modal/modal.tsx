@@ -14,9 +14,7 @@ export function Modal({ children, trigger, ...rest }: Props) {
 
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay className={s.overlay} />
-        <DialogPrimitive.Content className={s.content}>
-          {children}
-        </DialogPrimitive.Content>
+        <DialogPrimitive.Content className={s.content}>{children}</DialogPrimitive.Content>
       </DialogPrimitive.Portal>
     </DialogPrimitive.Root>
   )

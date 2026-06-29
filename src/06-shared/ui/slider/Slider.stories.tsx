@@ -38,23 +38,12 @@ export const Range: Story = {
   render: (args) => {
     const [value, setValue] = useState([20, 80])
 
-    return (
-      <Slider
-        {...args}
-        value={value}
-        onValueChange={setValue}
-        min={0}
-        max={100}
-        showTicks
-      />
-    )
+    return <Slider {...args} value={value} onValueChange={setValue} min={0} max={100} showTicks />
   },
 }
 
 export const Stepped: Story = {
-  render: (args) => (
-    <ControlledSlider {...args} min={0} max={100} step={10} showTicks />
-  ),
+  render: (args) => <ControlledSlider {...args} min={0} max={100} step={10} showTicks />,
 }
 
 export const Disabled: Story = {

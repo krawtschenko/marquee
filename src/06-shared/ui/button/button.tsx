@@ -29,9 +29,7 @@ export function Button<T extends ElementType = 'button'>(props: Props<T>) {
 
   return (
     <Tag className={clsx(s.btn, s[variant], s[size], className)} {...rest}>
-      {LeadingIcon && (
-        <LeadingIcon size={iconSize} className={clsx(loading && s.loading)} />
-      )}
+      {LeadingIcon && <LeadingIcon size={iconSize} className={clsx(loading && s.loading)} />}
       {children}
     </Tag>
   )

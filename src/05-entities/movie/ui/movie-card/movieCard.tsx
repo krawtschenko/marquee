@@ -9,7 +9,7 @@ type Props = ComponentPropsWithoutRef<'article'> & {
   title: string
   posterPath?: string
   voteAverage: number
-  releaseDate: string
+  releaseDate?: string
   runtime: string
   favorite?: boolean
   onFavoriteChange?: (favorite: boolean) => void
@@ -50,12 +50,7 @@ export function MovieCard({
             Trailer
           </Button>
 
-          <IconButton
-            icon={Heart}
-            size="sm"
-            active={favorite}
-            onClick={handleFavoriteClick}
-          />
+          <IconButton icon={Heart} size="sm" active={favorite} onClick={handleFavoriteClick} />
         </div>
       </div>
 

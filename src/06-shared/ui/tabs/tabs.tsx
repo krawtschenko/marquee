@@ -21,7 +21,5 @@ export function TabsTrigger({
   className,
   ...rest
 }: ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>) {
-  return (
-    <TabsPrimitive.Trigger className={clsx(s.trigger, className)} {...rest} />
-  )
+  return <TabsPrimitive.Trigger className={clsx(s.trigger, className)} {...rest} />
 }

@@ -6,10 +6,7 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: conic-gradient(
-    var(--ring) calc(var(--pct) * 1%),
-    var(--border) 0
-  );
+  background: conic-gradient(var(--ring) calc(var(--pct) * 1%), var(--border) 0);
 
   &::before {
     content: '';

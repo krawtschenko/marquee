@@ -31,9 +31,7 @@ export const WithLabel: Story = {
 }
 
 export const WithLabelChecked: Story = {
-  render: (args) => (
-    <ControlledSwitch {...args} checked={true} label="Enable notifications" />
-  ),
+  render: (args) => <ControlledSwitch {...args} checked={true} label="Enable notifications" />,
 }
 
 export const Disabled: Story = {

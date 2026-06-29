@@ -24,12 +24,7 @@
     height: 26%;
     border-radius: 50%;
     box-shadow: 0 0 22px var(--glow);
-    background: radial-gradient(
-      circle,
-      #fff,
-      var(--gold-300) 60%,
-      var(--gold-500)
-    );
+    background: radial-gradient(circle, #fff, var(--gold-300) 60%, var(--gold-500));
     transform: translate(-50%, -50%);
   }
 }

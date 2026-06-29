@@ -1,9 +1,4 @@
-import {
-  type ComponentPropsWithoutRef,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import { type ComponentPropsWithoutRef, useEffect, useRef, useState } from 'react'
 
 import clsx from 'clsx'
 import { ChevronDown } from 'lucide-react'
@@ -43,10 +38,7 @@ export function ReadMore({ text, className, ...rest }: Props) {
   }, [])
 
   return (
-    <div
-      className={clsx(s.readmore, clamped && s.isClamped, className)}
-      {...rest}
-    >
+    <div className={clsx(s.readmore, clamped && s.isClamped, className)} {...rest}>
       <p ref={textRef} className={s.text}>
         {text}
       </p>

@@ -32,8 +32,7 @@ export const Confirm: Story = {
             lineHeight: 'var(--lh-relaxed)',
           }}
         >
-          Are you sure you want to delete this item? This action cannot be
-          undone.
+          Are you sure you want to delete this item? This action cannot be undone.
         </p>
         <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
           <ModalClose>

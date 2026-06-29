@@ -14,12 +14,7 @@ type Props = ComponentPropsWithoutRef<typeof TabsPrimitive.Root> & {
   size?: Size
 }
 
-export function ViewToggle({
-  className,
-  children,
-  size = 'sm',
-  ...rest
-}: Props) {
+export function ViewToggle({ className, children, size = 'sm', ...rest }: Props) {
   return (
     <ViewToggleContext.Provider value={size}>
       <TabsPrimitive.Root className={clsx(s.root, className)} {...rest}>
@@ -29,23 +24,15 @@ export function ViewToggle({
   )
 }
 
-type ViewTriggerProps = ComponentPropsWithoutRef<
-  typeof TabsPrimitive.Trigger
-> & { icon?: LucideIcon }
+type ViewTriggerProps = ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> & {
+  icon?: LucideIcon
+}
 
-export function ViewTrigger({
-  className,
-  children,
-  icon: Icon,
-  ...rest
-}: ViewTriggerProps) {
+export function ViewTrigger({ className, children, icon: Icon, ...rest }: ViewTriggerProps) {
   const size = useContext(ViewToggleContext)
 
   return (
-    <TabsPrimitive.Trigger
-      className={clsx(s.trigger, s[size], className)}
-      {...rest}
-    >
+    <TabsPrimitive.Trigger className={clsx(s.trigger, s[size], className)} {...rest}>
       {Icon && <Icon size={size === 'sm' ? 15 : 16} />}
       {children}
     </TabsPrimitive.Trigger>

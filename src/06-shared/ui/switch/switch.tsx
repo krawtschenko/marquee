@@ -14,9 +14,7 @@ export function Switch({ className, label, loading, ...rest }: SwitchProps) {
   return (
     <label className={clsx(s.label, className)}>
       <SwitchPrimitive.Root className={clsx(s.root)} {...rest}>
-        <SwitchPrimitive.Thumb
-          className={clsx(s.thumb, loading && s.loading)}
-        />
+        <SwitchPrimitive.Thumb className={clsx(s.thumb, loading && s.loading)} />
       </SwitchPrimitive.Root>
       {label}
     </label>

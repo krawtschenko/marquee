@@ -7,13 +7,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
-const importSortGroups = [
-  ['^\\u0000'],
-  ['^react(-dom)?(/.*)?$'],
-  ['^@?\\w'],
-  ['^@/'],
-  ['^\\.'],
-]
+const importSortGroups = [['^\\u0000'], ['^react(-dom)?(/.*)?$'], ['^@?\\w'], ['^@/'], ['^\\.']]
 
 export default defineConfig([
   globalIgnores(['dist', 'storybook-static', 'node_modules', '.idea']),
@@ -40,10 +34,7 @@ export default defineConfig([
     rules: {
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/consistent-type-imports': [
-        'error',
-        { fixStyle: 'inline-type-imports' },
-      ],
+      '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
       '@typescript-eslint/no-non-null-assertion': 'warn',
       // Disable overly strict unsafe-any rules
       '@typescript-eslint/no-unsafe-argument': 'off',
@@ -74,10 +65,7 @@ export default defineConfig([
     rules: {
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/consistent-type-imports': [
-        'error',
-        { fixStyle: 'inline-type-imports' },
-      ],
+      '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': ['error', { groups: importSortGroups }],
     },

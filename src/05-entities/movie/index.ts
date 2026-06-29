@@ -1,1 +1,1 @@
-export { MovieCard } from './ui/movie-card'
+export { MovieCard, MovieCardSkeleton } from './ui/movie-card'

@@ -27,9 +27,7 @@ export function Select({ children, placeholder, label, ...rest }: Props) {
           sideOffset={8}
           onCloseAutoFocus={(e) => e.preventDefault()}
         >
-          <SelectPrimitive.Viewport className={s.viewport}>
-            {children}
-          </SelectPrimitive.Viewport>
+          <SelectPrimitive.Viewport className={s.viewport}>{children}</SelectPrimitive.Viewport>
         </SelectPrimitive.Content>
       </SelectPrimitive.Portal>
     </SelectPrimitive.Root>
@@ -38,11 +36,7 @@ export function Select({ children, placeholder, label, ...rest }: Props) {
 
 type SelectItemProps = ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
 
-export function SelectItem({
-  children,
-  className,
-  ...rest
-}: SelectItemProps) {
+export function SelectItem({ children, className, ...rest }: SelectItemProps) {
   return (
     <SelectPrimitive.Item className={clsx(s.item, className)} {...rest}>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>

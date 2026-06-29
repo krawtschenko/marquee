@@ -9,13 +9,7 @@ type Props = ComponentPropsWithoutRef<'input'> & {
   onClear?: () => void
 }
 
-export function SearchInput({
-  onClear,
-  className,
-  id,
-  value,
-  ...rest
-}: Props) {
+export function SearchInput({ onClear, className, id, value, ...rest }: Props) {
   const generateId = useId()
   const fieldId = id ?? generateId
 

@@ -12,15 +12,7 @@ type Props = ComponentPropsWithoutRef<'input'> & {
   error?: boolean
 }
 
-export function Field({
-  id,
-  className,
-  label,
-  required: req,
-  hint,
-  error,
-  ...rest
-}: Props) {
+export function Field({ id, className, label, required: req, hint, error, ...rest }: Props) {
   const generateId = useId()
   const fieldId = id ?? generateId
 
@@ -33,11 +25,7 @@ export function Field({
         </label>
       )}
 
-      <input
-        id={fieldId}
-        className={clsx(s.input, error && s.error)}
-        {...rest}
-      />
+      <input id={fieldId} className={clsx(s.input, error && s.error)} {...rest} />
 
       {hint && (
         <span className={clsx(s.hint, error && s.error)}>

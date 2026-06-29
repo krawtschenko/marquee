@@ -13,19 +13,9 @@ type Props = ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & {
   size?: 'xs' | 'sm' | 'md' | 'lg'
 }
 
-export function Avatar({
-  src,
-  fallback,
-  size = 'md',
-  className,
-  ...rest
-}: Props) {
+export function Avatar({ src, fallback, size = 'md', className, ...rest }: Props) {
   return (
-    <AvatarPrimitive.Root
-      tabIndex={0}
-      className={clsx(s.root, s[size], className)}
-      {...rest}
-    >
+    <AvatarPrimitive.Root tabIndex={0} className={clsx(s.root, s[size], className)} {...rest}>
       <AvatarPrimitive.Image className={s.image} src={src} alt={fallback} />
       <AvatarPrimitive.Fallback className={s.fallback} delayMs={300}>
         {fallback ?? <UserRound size={iconSize[size]} />}

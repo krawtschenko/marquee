@@ -12,9 +12,7 @@ type Props = ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Root> & {
 export function Dropdown({ children, trigger, label, ...rest }: Props) {
   return (
     <DropdownMenuPrimitive.Root {...rest}>
-      <DropdownMenuPrimitive.Trigger asChild>
-        {trigger}
-      </DropdownMenuPrimitive.Trigger>
+      <DropdownMenuPrimitive.Trigger asChild>{trigger}</DropdownMenuPrimitive.Trigger>
 
       <DropdownMenuPrimitive.Portal>
         <DropdownMenuPrimitive.Content
@@ -22,9 +20,7 @@ export function Dropdown({ children, trigger, label, ...rest }: Props) {
           onCloseAutoFocus={(e) => e.preventDefault()}
         >
           {label && (
-            <DropdownMenuPrimitive.Label className={s.label}>
-              {label}
-            </DropdownMenuPrimitive.Label>
+            <DropdownMenuPrimitive.Label className={s.label}>{label}</DropdownMenuPrimitive.Label>
           )}
           {children}
         </DropdownMenuPrimitive.Content>
@@ -33,37 +29,18 @@ export function Dropdown({ children, trigger, label, ...rest }: Props) {
   )
 }
 
-type DropdownItemProps = ComponentPropsWithoutRef<
-  typeof DropdownMenuPrimitive.Item
-> & {
+type DropdownItemProps = ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
   danger?: boolean
 }
 
-export function DropdownItem({
-  className,
-  danger,
-  ...rest
-}: DropdownItemProps) {
+export function DropdownItem({ className, danger, ...rest }: DropdownItemProps) {
   return (
-    <DropdownMenuPrimitive.Item
-      className={clsx(s.item, danger && s.danger, className)}
-      {...rest}
-    />
+    <DropdownMenuPrimitive.Item className={clsx(s.item, danger && s.danger, className)} {...rest} />
   )
 }
 
-type DropdownSeparatorProps = ComponentPropsWithoutRef<
-  typeof DropdownMenuPrimitive.Separator
->
+type DropdownSeparatorProps = ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>
 
-export function DropdownSeparator({
-  className,
-  ...rest
-}: DropdownSeparatorProps) {
-  return (
-    <DropdownMenuPrimitive.Separator
-      className={clsx(s.separator, className)}
-      {...rest}
-    />
-  )
+export function DropdownSeparator({ className, ...rest }: DropdownSeparatorProps) {
+  return <DropdownMenuPrimitive.Separator className={clsx(s.separator, className)} {...rest} />
 }

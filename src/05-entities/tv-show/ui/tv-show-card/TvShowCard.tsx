@@ -56,12 +56,7 @@ export function TvShowCard({
             Trailer
           </Button>
 
-          <IconButton
-            icon={Heart}
-            size="sm"
-            active={favorite}
-            onClick={handleFavoriteClick}
-          />
+          <IconButton icon={Heart} size="sm" active={favorite} onClick={handleFavoriteClick} />
         </div>
       </div>
 

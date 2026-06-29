@@ -41,8 +41,8 @@ export function Footer({ className, ...rest }: Props) {
             </div>
 
             <p className={s.tag}>
-              A premium, cinematic place to find what to watch next — across
-              every service, in one quiet room.
+              A premium, cinematic place to find what to watch next — across every service, in one
+              quiet room.
             </p>
           </div>
 
@@ -80,8 +80,7 @@ export function Footer({ className, ...rest }: Props) {
           <div className={s.legal}>© 2026 MARQUEE · All rights reserved</div>
           <div className={s.tmdb}>
             <span></span>
-            This product uses the TMDB API but is not endorsed or certified by
-            TMDB.
+            This product uses the TMDB API but is not endorsed or certified by TMDB.
           </div>
         </Container>
       </div>

@@ -21,13 +21,7 @@ type Props = {
   className?: string
 }
 
-export function StarRating({
-  value,
-  onChange,
-  showLabel,
-  readonly,
-  className,
-}: Props) {
+export function StarRating({ value, onChange, showLabel, readonly, className }: Props) {
   const [hovered, setHovered] = useState<number | null>(null)
 
   const displayed = hovered ?? value
@@ -45,10 +39,8 @@ export function StarRating({
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     let next: number | null = null
-    if (e.key === 'ArrowRight' || e.key === 'ArrowUp')
-      next = Math.min(value + 1, 10)
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown')
-      next = Math.max(value - 1, 0)
+    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') next = Math.min(value + 1, 10)
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') next = Math.max(value - 1, 0)
     if (next !== null) {
       e.preventDefault()
       onChange?.(next)
@@ -76,11 +68,7 @@ export function StarRating({
               className={s.star}
               data-state={state}
               onClick={interactive ? (e) => handleClick(e, star) : undefined}
-              onMouseMove={
-                interactive
-                  ? (e) => setHovered(getHalfValue(e, star))
-                  : undefined
-              }
+              onMouseMove={interactive ? (e) => setHovered(getHalfValue(e, star)) : undefined}
             >
               <Star size={26} />
               {state !== 'empty' && <Star size={26} />}
@@ -89,9 +77,7 @@ export function StarRating({
         })}
       </div>
 
-      {showLabel && (
-        <span className={s.label}>{value > 0 ? `${value} / 10` : '—'}</span>
-      )}
+      {showLabel && <span className={s.label}>{value > 0 ? `${value} / 10` : '—'}</span>}
     </div>
   )
 }

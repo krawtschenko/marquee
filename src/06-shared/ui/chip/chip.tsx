@@ -8,16 +8,12 @@ export function Chip({
   className,
   ...rest
 }: ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root>) {
-  return (
-    <ToggleGroupPrimitive.Root className={clsx(s.group, className)} {...rest} />
-  )
+  return <ToggleGroupPrimitive.Root className={clsx(s.group, className)} {...rest} />
 }
 
 export function ChipItem({
   className,
   ...rest
 }: ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item>) {
-  return (
-    <ToggleGroupPrimitive.Item className={clsx(s.item, className)} {...rest} />
-  )
+  return <ToggleGroupPrimitive.Item className={clsx(s.item, className)} {...rest} />
 }

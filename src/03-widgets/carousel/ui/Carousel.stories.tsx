@@ -4,8 +4,16 @@ import { MemoryRouter } from 'react-router-dom'
 import { Carousel } from './Carousel'
 
 const CARD_COLORS = [
-  '#e76f51', '#2a9d8f', '#e9c46a', '#264653', '#f4a261',
-  '#a8dadc', '#457b9d', '#e63946', '#606c38', '#dda15e',
+  '#e76f51',
+  '#2a9d8f',
+  '#e9c46a',
+  '#264653',
+  '#f4a261',
+  '#a8dadc',
+  '#457b9d',
+  '#e63946',
+  '#606c38',
+  '#dda15e',
 ]
 
 function MockCard({ label, color }: { label: string; color: string }) {
@@ -48,7 +56,6 @@ const meta: Meta<typeof Carousel> = {
     title: 'Trending this week',
     subTitle: 'Right now',
     linkTo: '#',
-    linkLabel: 'See all',
     children: CARD_COLORS.map((color, i) => (
       <MockCard key={i} label={`Card ${i + 1}`} color={color} />
     )),

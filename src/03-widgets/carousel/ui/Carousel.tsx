@@ -11,11 +11,10 @@ type Props = {
   title: string
   subTitle?: string
   linkTo?: string
-  linkLabel?: string
   children: ReactNode
 }
 
-export function Carousel({ title, subTitle, linkTo, linkLabel = 'See all', children }: Props) {
+export function Carousel({ title, subTitle, linkTo, children }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null)
 
   const scroll = (direction: 'left' | 'right') => {
@@ -36,7 +35,7 @@ export function Carousel({ title, subTitle, linkTo, linkLabel = 'See all', child
         <div className={s.right}>
           {linkTo && (
             <Link to={linkTo} className={s.link}>
-              {linkLabel}
+              See all
               <MoveRight size={14} />
             </Link>
           )}

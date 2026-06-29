@@ -11,18 +11,10 @@ type CheckboxProps = ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> & {
   error?: boolean
 }
 
-export function Checkbox({
-  className,
-  label,
-  error,
-  ...rest
-}: CheckboxProps) {
+export function Checkbox({ className, label, error, ...rest }: CheckboxProps) {
   return (
     <label className={clsx(s.label, className)}>
-      <CheckboxPrimitive.Root
-        className={clsx(s.box, error && s.error)}
-        {...rest}
-      >
+      <CheckboxPrimitive.Root className={clsx(s.box, error && s.error)} {...rest}>
         <CheckboxPrimitive.Indicator className={s.indicator}>
           <Check size={14} aria-hidden />
         </CheckboxPrimitive.Indicator>

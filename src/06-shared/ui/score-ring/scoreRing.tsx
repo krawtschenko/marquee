@@ -15,13 +15,7 @@ const getColorVariant = (pct: number) => {
   return s.low
 }
 
-export function ScoreRing({
-  className,
-  score,
-  max = 10,
-  size = 'sm',
-  ...rest
-}: Props) {
+export function ScoreRing({ className, score, max = 10, size = 'sm', ...rest }: Props) {
   const pct = Math.round((score / max) * 100)
 
   return (
