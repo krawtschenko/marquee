@@ -57,20 +57,20 @@
   .carouselWrap {
     position: relative;
 
-    &::before {
+    &::after {
       content: '';
       position: absolute;
       top: 0;
+      right: 0;
       bottom: 0;
-      left: 0;
-      width: 120px;
-      background: linear-gradient(to left, transparent, var(--bg));
+      width: 180px;
+      background: linear-gradient(to right, transparent, var(--bg));
       pointer-events: none;
       opacity: 0;
       transition: opacity var(--dur-base) var(--ease-out);
     }
 
-    &:not(.atStart)::before {
+    &.atStart::after {
       opacity: 1;
     }
   }

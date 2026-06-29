@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 import { IconButton } from '@shared/ui'
 import { ChevronLeft, ChevronRight, MoveRight } from 'lucide-react'
@@ -16,6 +16,7 @@ type Props = {
 
 export function Carousel({ title, subTitle, linkTo, children }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null)
+  const [atStart, setAtStart] = useState(true)
 
   const scroll = (direction: 'left' | 'right') => {
     const el = scrollRef.current
@@ -23,6 +24,14 @@ export function Carousel({ title, subTitle, linkTo, children }: Props) {
     if (!el) return
 
     el.scrollBy({ left: direction === 'left' ? -el.offsetWidth : el.offsetWidth })
+  }
+
+  const handleScroll = () => {
+    const el = scrollRef.current
+
+    if (!el) return
+
+    setAtStart(el.scrollLeft === 0)
   }
 
   return (
@@ -46,8 +55,10 @@ export function Carousel({ title, subTitle, linkTo, children }: Props) {
         </div>
       </div>
 
-      <div className={s.carousel} ref={scrollRef}>
-        {children}
+      <div className={`${s.carouselWrap} ${atStart ? s.atStart : ''}`}>
+        <div className={s.carousel} ref={scrollRef} onScroll={handleScroll}>
+          {children}
+        </div>
       </div>
     </div>
   )
