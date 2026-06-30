@@ -9,7 +9,7 @@ type Props = ComponentPropsWithoutRef<'article'> & {
   title: string
   posterPath?: string
   voteAverage: number
-  firstAirDate: string
+  firstAirDate?: string
   seasons: string
   episodes: string
   favorite?: boolean
